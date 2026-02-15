@@ -1,6 +1,13 @@
 import { WebSocket } from 'ws';
 import { OpenAIConfig } from '../../types.js';
-import { OPENAI_REALTIME_MODEL, OPENAI_TURN_DETECTION, SHOW_TIMING_MATH } from '../../config/constants.js';
+import {
+    OPENAI_REALTIME_MODEL,
+    OPENAI_TURN_DETECTION,
+    OPENAI_VAD_PREFIX_PADDING_MS,
+    OPENAI_VAD_SILENCE_DURATION_MS,
+    OPENAI_VAD_THRESHOLD,
+    SHOW_TIMING_MATH
+} from '../../config/constants.js';
 
 /**
  * Service for handling OpenAI API interactions
@@ -17,6 +24,22 @@ export class OpenAIWsService {
     constructor(config: OpenAIConfig) {
         this.config = config;
         this.useGaSessionSchema = process.env.OPENAI_SESSION_SCHEMA === 'ga';
+    }
+
+    private buildTurnDetection(type: string): Record<string, unknown> {
+        const turnDetection: Record<string, unknown> = { type };
+        if (type === 'server_vad') {
+            if (typeof OPENAI_VAD_THRESHOLD === 'number') {
+                turnDetection.threshold = OPENAI_VAD_THRESHOLD;
+            }
+            if (typeof OPENAI_VAD_PREFIX_PADDING_MS === 'number') {
+                turnDetection.prefix_padding_ms = OPENAI_VAD_PREFIX_PADDING_MS;
+            }
+            if (typeof OPENAI_VAD_SILENCE_DURATION_MS === 'number') {
+                turnDetection.silence_duration_ms = OPENAI_VAD_SILENCE_DURATION_MS;
+            }
+        }
+        return turnDetection;
     }
 
     /**
@@ -81,6 +104,10 @@ export class OpenAIWsService {
             tool_choice: 'auto'
         };
 
+        const gaTurnDetection = this.buildTurnDetection(OPENAI_TURN_DETECTION);
+        const legacyTurnDetectionType = OPENAI_TURN_DETECTION === 'semantic_vad' ? 'server_vad' : OPENAI_TURN_DETECTION;
+        const legacyTurnDetection = this.buildTurnDetection(legacyTurnDetectionType);
+
         const sessionUpdate = this.useGaSessionSchema
             ? {
                 type: 'session.update',
@@ -91,7 +118,7 @@ export class OpenAIWsService {
                     audio: {
                         input: {
                             format: { type: 'audio/pcmu' },
-                            turn_detection: { type: OPENAI_TURN_DETECTION }
+                            turn_detection: gaTurnDetection
                         },
                         output: {
                             format: { type: 'audio/pcmu' },
@@ -107,7 +134,7 @@ export class OpenAIWsService {
                 type: 'session.update',
                 session: {
                     // Legacy realtime websocket schema (Twilio-compatible today).
-                    turn_detection: { type: OPENAI_TURN_DETECTION === 'semantic_vad' ? 'server_vad' : OPENAI_TURN_DETECTION },
+                    turn_detection: legacyTurnDetection,
                     input_audio_format: 'g711_ulaw',
                     output_audio_format: 'g711_ulaw',
                     voice: this.config.voice,

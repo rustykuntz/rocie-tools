@@ -52,6 +52,7 @@ export class OpenAICallHandler {
             this.callState,
             (callId, args) => this.handleEndCallTool(callId, args),
             (payload) => this.twilioStream.sendAudio(payload),
+            () => this.twilioStream.sendMark(),
             () => this.handleSpeechStartedEvent()
         );
 
@@ -137,7 +138,7 @@ export class OpenAICallHandler {
     }
 
     private handleSpeechStartedEvent(): void {
-        if (this.callState.markQueue.length === 0 || this.callState.responseStartTimestampTwilio === null || !this.callState.lastAssistantItemId) {
+        if (this.callState.responseStartTimestampTwilio === null || !this.callState.lastAssistantItemId) {
             return;
         }
 

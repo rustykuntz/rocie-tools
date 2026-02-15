@@ -9,6 +9,7 @@ export class OpenAIEventService {
     private readonly callState: CallState;
     private readonly onEndCallTool: (callId: string | null, args: Record<string, unknown>) => void;
     private readonly onSendAudioToTwilio: (payload: string) => void;
+    private readonly onSendMarkToTwilio: () => void;
     private readonly onTruncateResponse: () => void;
 
     /**
@@ -16,17 +17,20 @@ export class OpenAIEventService {
      * @param callState The state of the call
      * @param onEndCallTool Callback for model end_call tool invocation
      * @param onSendAudioToTwilio Callback for sending audio to Twilio
+     * @param onSendMarkToTwilio Callback for sending mark events to Twilio
      * @param onTruncateResponse Callback for truncating the response
      */
     constructor(
         callState: CallState,
         onEndCallTool: (callId: string | null, args: Record<string, unknown>) => void,
         onSendAudioToTwilio: (payload: string) => void,
+        onSendMarkToTwilio: () => void,
         onTruncateResponse: () => void
     ) {
         this.callState = callState;
         this.onEndCallTool = onEndCallTool;
         this.onSendAudioToTwilio = onSendAudioToTwilio;
+        this.onSendMarkToTwilio = onSendMarkToTwilio;
         this.onTruncateResponse = onTruncateResponse;
     }
 
@@ -154,7 +158,11 @@ export class OpenAIEventService {
         }
 
         if (response.item_id) {
+            const isNewAssistantItem = response.item_id !== this.callState.lastAssistantItemId;
             this.callState.lastAssistantItemId = response.item_id;
+            if (isNewAssistantItem) {
+                this.onSendMarkToTwilio();
+            }
         }
     }
 }

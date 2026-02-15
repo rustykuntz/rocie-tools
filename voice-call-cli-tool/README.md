@@ -40,6 +40,9 @@ Optional:
 - `OPENAI_SESSION_SCHEMA` (`legacy` default, `ga` optional)
 - `OPENAI_REALTIME_MODEL` (default: `gpt-realtime`)
 - `OPENAI_TURN_DETECTION` (default: `semantic_vad`)
+- `OPENAI_VAD_THRESHOLD` (server_vad only, e.g. `0.3` for more sensitive interruption)
+- `OPENAI_VAD_PREFIX_PADDING_MS` (server_vad only, e.g. `300`)
+- `OPENAI_VAD_SILENCE_DURATION_MS` (server_vad only, e.g. `180` for faster barge-in)
 - `END_CALL_DELAY_MS` (default: `1500`)
 - `PORT` (default: `3004`)
 
