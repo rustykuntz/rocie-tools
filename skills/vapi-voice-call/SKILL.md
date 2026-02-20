@@ -14,20 +14,22 @@ Place outbound phone calls via the Vapi API. Creates the call, polls until compl
 ## Installation
 
 ```bash
-# Clone the rocie-tools repo (skip if already cloned)
-git clone https://github.com/rustykuntz/rocie-tools.git ~/.rocie/tools/rocie-tools
+# Clone only the vapi-call-cli-tool from rocie-tools
+git clone --filter=blob:none --sparse https://github.com/rustykuntz/rocie-tools.git ~/.rocie/tools/vapi-call-cli-tool
+cd ~/.rocie/tools/vapi-call-cli-tool
+git sparse-checkout set tools/vapi-call-cli-tool
 
-# Install and build the vapi-call CLI
-cd ~/.rocie/tools/rocie-tools/tools/vapi-call-cli-tool
+# Install and build
+cd tools/vapi-call-cli-tool
 npm install
 npm run build
 ```
 
-The built binary is at `~/.rocie/tools/rocie-tools/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs`.
+The built binary is at `~/.rocie/tools/vapi-call-cli-tool/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs`.
 
 To verify installation:
 ```bash
-node ~/.rocie/tools/rocie-tools/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs --help
+node ~/.rocie/tools/vapi-call-cli-tool/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs --help
 ```
 
 ## Required credentials
@@ -46,7 +48,7 @@ All credentials are auto-loaded from `~/.rocie/config.yaml`.
 ## Usage
 
 ```bash
-VAPI_CLI="$HOME/.rocie/tools/rocie-tools/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs"
+VAPI_CLI="$HOME/.rocie/tools/vapi-call-cli-tool/tools/vapi-call-cli-tool/dist/vapi-call-cli.cjs"
 
 # Basic call
 node "$VAPI_CLI" \
