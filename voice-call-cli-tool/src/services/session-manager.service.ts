@@ -8,7 +8,7 @@ import { OpenAICallHandler } from '../handlers/openai.handler.js';
  * Manages multiple concurrent call sessions
  */
 export class SessionManagerService {
-    private readonly activeSessions: Map<string, OpenAICallHandler>;
+    private readonly activeSessions: Map<WebSocket, OpenAICallHandler>;
     private readonly twilioClient: twilio.Twilio;
     private readonly contextService: OpenAIContextService;
 
@@ -49,7 +49,7 @@ export class SessionManagerService {
      * @param handler The OpenAI call handler
      */
     private addSession(ws: WebSocket, handler: OpenAICallHandler): void {
-        this.activeSessions.set(this.getSessionKey(ws), handler);
+        this.activeSessions.set(ws, handler);
     }
 
     /**
@@ -57,19 +57,7 @@ export class SessionManagerService {
      * @param ws The WebSocket connection
      */
     private removeSession(ws: WebSocket): void {
-        const sessionKey = this.getSessionKey(ws);
-        if (this.activeSessions.has(sessionKey)) {
-            this.activeSessions.delete(sessionKey);
-        }
-    }
-
-    /**
-     * Generates a unique key for a session based on the WebSocket object
-     * @param ws The WebSocket connection
-     * @returns A unique key for the session
-     */
-    private getSessionKey(ws: WebSocket): string {
-        return ws.url || ws.toString();
+        this.activeSessions.delete(ws);
     }
 
     /**

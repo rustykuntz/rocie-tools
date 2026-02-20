@@ -1,6 +1,5 @@
 import { WebSocket } from 'ws';
 import { CallState } from '../../types.js';
-import { SHOW_TIMING_MATH } from '../../config/constants.js';
 
 /**
  * Service for handling Twilio WebSocket streams
@@ -87,36 +86,5 @@ export class TwilioWsService {
     ): void {
         this.webSocket.on('message', onMessage);
         this.webSocket.on('close', onClose);
-    }
-
-    /**
-     * Process a Twilio start event
-     * @param data The start event data
-     */
-    public processStartEvent(data: any): void {
-        this.callState.streamSid = data.start.streamSid;
-        this.callState.responseStartTimestampTwilio = null;
-        this.callState.latestMediaTimestamp = 0;
-        this.callState.callSid = data.start.callSid;
-    }
-
-    /**
-     * Process a Twilio mark event
-     */
-    public processMarkEvent(): void {
-        if (this.callState.markQueue.length > 0) {
-            this.callState.markQueue.shift();
-        }
-    }
-
-    /**
-     * Process a Twilio media event
-     * @param data The media event data
-     */
-    public processMediaEvent(data: any): void {
-        this.callState.latestMediaTimestamp = data.media.timestamp;
-        if (SHOW_TIMING_MATH) {
-            // console.log(`Received media message with timestamp: ${this.callState.latestMediaTimestamp}ms`);
-        }
     }
 }

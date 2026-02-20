@@ -18,6 +18,7 @@ const REQUIRED_ENV_VARS = [
     'TWILIO_ACCOUNT_SID',
     'TWILIO_AUTH_TOKEN',
     'OPENAI_API_KEY',
+    'OPENAI_REALTIME_MODEL',
     'NGROK_AUTHTOKEN',
     'TWILIO_NUMBER'
 ] as const;
@@ -26,13 +27,15 @@ type CliArgs = {
     toNumber: string;
     timeoutMs: number;
     callContext: string;
+    voice: string;
+    voiceId: string;
 };
 
 function printUsage(): void {
     process.stderr.write(
-        'Usage: voice-call --to +15551234567 --context-file /tmp/call-context.txt [--timeout 300000]\n' +
-        '   or: voice-call --to +15551234567 --context "Call objective text" [--timeout 300000]\n' +
-        '   or: cat context.txt | voice-call --to +15551234567 --timeout 300000\n'
+        'Usage: voice-call --to +15551234567 --context-file /tmp/call-context.txt [--voice marin] [--voice-id voice_abc] [--timeout 300000]\n' +
+        '   or: voice-call --to +15551234567 --context "Call objective text" [--voice marin] [--voice-id voice_abc] [--timeout 300000]\n' +
+        '   or: cat context.txt | voice-call --to +15551234567 [--voice marin] [--voice-id voice_abc] --timeout 300000\n'
     );
 }
 
@@ -41,6 +44,8 @@ function parseArgs(argv: string[]): CliArgs {
     let timeoutMs = 300000;
     let contextFromArg = '';
     let contextFile = '';
+    let voice = '';
+    let voiceId = '';
 
     for (let i = 0; i < argv.length; i += 1) {
         const arg = argv[i];
@@ -73,6 +78,16 @@ function parseArgs(argv: string[]): CliArgs {
             i += 1;
             continue;
         }
+        if (arg === '--voice') {
+            voice = (argv[i + 1] || '').trim();
+            i += 1;
+            continue;
+        }
+        if (arg === '--voice-id') {
+            voiceId = (argv[i + 1] || '').trim();
+            i += 1;
+            continue;
+        }
         throw new Error(`Unknown argument: ${arg}`);
     }
 
@@ -93,7 +108,7 @@ function parseArgs(argv: string[]): CliArgs {
         throw new Error('Call context is required (--context, --context-file, or stdin)');
     }
 
-    return { toNumber, timeoutMs, callContext };
+    return { toNumber, timeoutMs, callContext, voice, voiceId };
 }
 
 function validateEnvironmentVariables(): void {
@@ -127,6 +142,13 @@ async function run(): Promise<void> {
     let server: { stop: () => Promise<void> } | null = null;
     try {
         const args = parseArgs(process.argv.slice(2));
+        if (args.voice) {
+            process.env.OPENAI_VOICE = args.voice;
+        }
+        if (args.voiceId) {
+            process.env.OPENAI_VOICE_ID = args.voiceId;
+        }
+
         validateEnvironmentVariables();
 
         const portNumber = setupPort();

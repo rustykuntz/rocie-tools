@@ -26,6 +26,9 @@ export class OpenAICallHandler {
     private readonly callState: CallState;
     private endingCall = false;
     private sessionInitialized = false;
+    private sessionReady = false;
+    private initialResponseRequested = false;
+    private initialResponseFallbackTimer: NodeJS.Timeout | null = null;
     private endCallTimer: NodeJS.Timeout | null = null;
     private readonly endCallDelayMs: number;
 
@@ -38,12 +41,15 @@ export class OpenAICallHandler {
         this.twilioStream = new TwilioWsService(ws, this.callState);
         this.twilioCallService = new TwilioCallService(twilioClient);
 
+        const parsedTemperature = Number.parseFloat(process.env.OPENAI_TEMPERATURE || '0.45');
+        const temperature = Number.isFinite(parsedTemperature) ? parsedTemperature : 0.45;
+
         // Initialize OpenAI service
         const openAIConfig: OpenAIConfig = {
             apiKey: process.env.OPENAI_API_KEY || '',
-            websocketUrl: process.env.OPENAI_WEBSOCKET_URL || 'wss://api.openai.com/v1/realtime?model=gpt-realtime',
+            websocketUrl: process.env.OPENAI_WEBSOCKET_URL || 'wss://api.openai.com/v1/realtime',
             voice: VOICE,
-            temperature: 0.6
+            temperature
         };
         this.openAIService = new OpenAIWsService(openAIConfig);
 
@@ -53,7 +59,8 @@ export class OpenAICallHandler {
             (callId, args) => this.handleEndCallTool(callId, args),
             (payload) => this.twilioStream.sendAudio(payload),
             () => this.twilioStream.sendMark(),
-            () => this.handleSpeechStartedEvent()
+            () => this.handleSpeechStartedEvent(),
+            (response) => this.handleSessionUpdatedEvent(response)
         );
 
         this.twilioEventProcessor = new TwilioEventService(
@@ -108,6 +115,10 @@ export class OpenAICallHandler {
     }
 
     private closeWebSockets(): void {
+        if (this.initialResponseFallbackTimer) {
+            clearTimeout(this.initialResponseFallbackTimer);
+            this.initialResponseFallbackTimer = null;
+        }
         this.twilioStream.close();
         this.openAIService.close();
     }
@@ -125,6 +136,7 @@ export class OpenAICallHandler {
 
         this.sessionInitialized = true;
         this.openAIService.initializeSession(context);
+        this.scheduleInitialResponseFallback();
     }
 
     private initializeOpenAI(): void {
@@ -133,20 +145,66 @@ export class OpenAICallHandler {
             () => {
                 setTimeout(() => this.initializeSessionWhenContextReady(), 100);
             },
-            (error) => console.error('Error in the OpenAI WebSocket:', error)
+            (error) => {
+                console.error('Error in the OpenAI WebSocket:', error);
+                this.endCall();
+            }
         );
     }
 
+    private handleSessionUpdatedEvent(response: any): void {
+        void response;
+        this.sessionReady = true;
+        this.requestInitialResponseIfReady();
+    }
+
+    private requestInitialResponseIfReady(): void {
+        if (this.initialResponseRequested || !this.sessionInitialized || !this.sessionReady || this.endingCall) {
+            return;
+        }
+
+        this.initialResponseRequested = true;
+        if (this.initialResponseFallbackTimer) {
+            clearTimeout(this.initialResponseFallbackTimer);
+            this.initialResponseFallbackTimer = null;
+        }
+        this.openAIService.requestResponse();
+    }
+
+    private scheduleInitialResponseFallback(): void {
+        if (this.initialResponseFallbackTimer) {
+            clearTimeout(this.initialResponseFallbackTimer);
+            this.initialResponseFallbackTimer = null;
+        }
+
+        // Some sessions do not emit session.updated reliably; fallback avoids dead air.
+        this.initialResponseFallbackTimer = setTimeout(() => {
+            if (this.initialResponseRequested || !this.sessionInitialized || this.endingCall) {
+                return;
+            }
+            this.initialResponseRequested = true;
+            this.openAIService.requestResponse();
+        }, 1200);
+    }
+
     private handleSpeechStartedEvent(): void {
+        // Only interrupt while assistant audio is still queued to play on Twilio.
+        if (this.callState.markQueue.length === 0) {
+            return;
+        }
         if (this.callState.responseStartTimestampTwilio === null || !this.callState.lastAssistantItemId) {
             return;
         }
 
         const elapsedTime = this.callState.latestMediaTimestamp - this.callState.responseStartTimestampTwilio;
+        const generatedAudioMs = this.openAIEventProcessor.getAssistantAudioMs(this.callState.lastAssistantItemId);
+        const safeAudioEndMs = Math.max(0, Math.min(elapsedTime, generatedAudioMs));
 
-        this.openAIService.truncateAssistantResponse(this.callState.lastAssistantItemId, elapsedTime);
-        this.twilioStream.clearStream();
-        this.resetResponseState();
+        if (safeAudioEndMs > 0) {
+            this.openAIService.truncateAssistantResponse(this.callState.lastAssistantItemId, safeAudioEndMs);
+            this.twilioStream.clearStream();
+            this.resetResponseState();
+        }
     }
 
     private resetResponseState(): void {

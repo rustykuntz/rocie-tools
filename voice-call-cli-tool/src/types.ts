@@ -23,16 +23,7 @@ export class CallState {
 
     // Call context and conversation
     callContext = '';
-    initialMessage = '';
     conversationHistory: ConversationMessage[] = [];
-
-    // Speech state
-    speaking = false;
-
-    // Timing and processing state
-    llmStart = 0;
-    firstByte = true;
-    sendFirstSentenceInputTime: number | null = null;
 
     // Media processing state
     latestMediaTimestamp = 0;

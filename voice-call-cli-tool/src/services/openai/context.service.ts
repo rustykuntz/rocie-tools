@@ -9,7 +9,6 @@ export class OpenAIContextService {
     }
 
     public setupConversationContext(callState: CallState, callContext?: string): void {
-        callState.initialMessage = 'Hello!';
         callState.callContext = generateOutboundCallContext(callState, callContext);
 
         const systemMessage: ConversationMessage = {
@@ -18,13 +17,6 @@ export class OpenAIContextService {
         };
 
         callState.conversationHistory = [systemMessage];
-
-        const initialMessage: ConversationMessage = {
-            role: 'user',
-            content: callState.initialMessage
-        };
-
-        callState.conversationHistory.push(initialMessage);
     }
 
 }

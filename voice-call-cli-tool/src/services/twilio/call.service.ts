@@ -1,5 +1,6 @@
 import twilio from 'twilio';
 import { DYNAMIC_API_SECRET, RECORD_CALLS } from '../../config/constants.js';
+import { storeCallContext } from '../context-registry.service.js';
 
 /**
  * Service for handling Twilio call operations
@@ -53,14 +54,11 @@ export class TwilioCallService {
 
     public async makeCall(twilioCallbackUrl: string, toNumber: string, callContext = ''): Promise<string> {
         try {
-            const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-
-            const callContextEncoded =  encodeURIComponent(callContext);
-
-            const call = await twilioClient.calls.create({
+            const contextId = storeCallContext(callContext);
+            const call = await this.twilioClient.calls.create({
                 to: toNumber,
                 from: process.env.TWILIO_NUMBER || '',
-                url: `${twilioCallbackUrl}/call/outgoing?apiSecret=${DYNAMIC_API_SECRET}&callType=outgoing&callContext=${callContextEncoded}`,
+                url: `${twilioCallbackUrl}/call/outgoing?apiSecret=${DYNAMIC_API_SECRET}&callType=outgoing&contextId=${encodeURIComponent(contextId)}`,
             });
 
             return call.sid;

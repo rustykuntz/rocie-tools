@@ -23,6 +23,12 @@ For this repo, Rocie should install and run only the specific tool needed for th
 - one folder per tool
 - each tool is self-contained (`package.json`, dependencies, docs)
 
+## Tools
+
+- `voice-call-cli-tool`: Twilio + OpenAI Realtime outbound call CLI
+- `elevenlabs-call-cli-tool`: Twilio + ElevenLabs Agents outbound call CLI
+- `vapi-call-cli-tool`: Vapi outbound call CLI with per-call prompt overrides
+
 ## Install pattern (per tool)
 
 ```bash

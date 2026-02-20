@@ -11,10 +11,14 @@ export const LOG_EVENT_TYPES = [
 
 export const DYNAMIC_API_SECRET = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 export const SHOW_TIMING_MATH = false;
-export const VOICE = 'sage';
+export const VOICE = (process.env.OPENAI_VOICE || 'marin').trim() || 'marin';
 export const RECORD_CALLS = process.env.RECORD === 'true';
-export const OPENAI_REALTIME_MODEL = process.env.OPENAI_REALTIME_MODEL || 'gpt-realtime';
+export const OPENAI_REALTIME_MODEL = (process.env.OPENAI_REALTIME_MODEL || '').trim();
 export const OPENAI_TURN_DETECTION = process.env.OPENAI_TURN_DETECTION || 'semantic_vad';
+
+const DEFAULT_SERVER_VAD_THRESHOLD = 0.7;
+const DEFAULT_SERVER_VAD_PREFIX_PADDING_MS = 300;
+const DEFAULT_SERVER_VAD_SILENCE_DURATION_MS = 450;
 
 function parseOptionalFloat(value: string | undefined): number | undefined {
     if (!value) return undefined;
@@ -28,6 +32,6 @@ function parseOptionalInt(value: string | undefined): number | undefined {
     return Number.isFinite(parsed) ? parsed : undefined;
 }
 
-export const OPENAI_VAD_THRESHOLD = parseOptionalFloat(process.env.OPENAI_VAD_THRESHOLD);
-export const OPENAI_VAD_PREFIX_PADDING_MS = parseOptionalInt(process.env.OPENAI_VAD_PREFIX_PADDING_MS);
-export const OPENAI_VAD_SILENCE_DURATION_MS = parseOptionalInt(process.env.OPENAI_VAD_SILENCE_DURATION_MS);
+export const OPENAI_VAD_THRESHOLD = parseOptionalFloat(process.env.OPENAI_VAD_THRESHOLD) ?? DEFAULT_SERVER_VAD_THRESHOLD;
+export const OPENAI_VAD_PREFIX_PADDING_MS = parseOptionalInt(process.env.OPENAI_VAD_PREFIX_PADDING_MS) ?? DEFAULT_SERVER_VAD_PREFIX_PADDING_MS;
+export const OPENAI_VAD_SILENCE_DURATION_MS = parseOptionalInt(process.env.OPENAI_VAD_SILENCE_DURATION_MS) ?? DEFAULT_SERVER_VAD_SILENCE_DURATION_MS;

@@ -23,23 +23,32 @@ export class OpenAIWsService {
      */
     constructor(config: OpenAIConfig) {
         this.config = config;
-        this.useGaSessionSchema = process.env.OPENAI_SESSION_SCHEMA === 'ga';
+        const schema = (process.env.OPENAI_SESSION_SCHEMA || 'ga').toLowerCase();
+        this.useGaSessionSchema = schema !== 'legacy';
     }
 
     private buildTurnDetection(type: string): Record<string, unknown> {
         const turnDetection: Record<string, unknown> = { type };
         if (type === 'server_vad') {
-            if (typeof OPENAI_VAD_THRESHOLD === 'number') {
-                turnDetection.threshold = OPENAI_VAD_THRESHOLD;
-            }
-            if (typeof OPENAI_VAD_PREFIX_PADDING_MS === 'number') {
-                turnDetection.prefix_padding_ms = OPENAI_VAD_PREFIX_PADDING_MS;
-            }
-            if (typeof OPENAI_VAD_SILENCE_DURATION_MS === 'number') {
-                turnDetection.silence_duration_ms = OPENAI_VAD_SILENCE_DURATION_MS;
-            }
+            turnDetection.threshold = OPENAI_VAD_THRESHOLD;
+            turnDetection.prefix_padding_ms = OPENAI_VAD_PREFIX_PADDING_MS;
+            turnDetection.silence_duration_ms = OPENAI_VAD_SILENCE_DURATION_MS;
         }
         return turnDetection;
+    }
+
+    private buildWebSocketUrl(): string {
+        const websocketUrl = new URL(this.config.websocketUrl);
+        websocketUrl.searchParams.set('model', OPENAI_REALTIME_MODEL);
+        return websocketUrl.toString();
+    }
+
+    private getGaOutputVoice(): string | { id: string } {
+        const voiceId = (process.env.OPENAI_VOICE_ID || '').trim();
+        if (voiceId) {
+            return { id: voiceId };
+        }
+        return this.config.voice;
     }
 
     /**
@@ -53,21 +62,27 @@ export class OpenAIWsService {
         onOpen: () => void,
         onError: (error: Error) => void
     ): void {
+        if (!OPENAI_REALTIME_MODEL) {
+            onError(new Error('Missing required env var: OPENAI_REALTIME_MODEL'));
+            return;
+        }
+
         const headers: Record<string, string> = {
             Authorization: `Bearer ${this.config.apiKey}`,
         };
-        // Current Twilio websocket integrations are typically on the legacy realtime event schema.
+
         if (!this.useGaSessionSchema) {
             headers['OpenAI-Beta'] = 'realtime=v1';
         }
 
-        this.webSocket = new WebSocket(this.config.websocketUrl, {
+        this.webSocket = new WebSocket(this.buildWebSocketUrl(), {
             headers
         });
 
         this.webSocket.on('open', onOpen);
         this.webSocket.on('message', onMessage);
         this.webSocket.on('error', onError);
+        this.webSocket.on('close', () => onError(new Error('OpenAI WebSocket closed')));
     }
 
     /**
@@ -79,8 +94,18 @@ export class OpenAIWsService {
             return;
         }
 
+        if (!this.useGaSessionSchema && (process.env.OPENAI_VOICE_ID || '').trim()) {
+            console.warn('OPENAI_VOICE_ID is only supported with OPENAI_SESSION_SCHEMA=ga. Ignoring voice id in legacy mode.');
+        }
+
+        const transcriptionLanguage = (process.env.OPENAI_TRANSCRIPTION_LANGUAGE || '').trim();
+        const gaTranscription: Record<string, unknown> = { model: 'whisper-1' };
+        if (transcriptionLanguage) {
+            gaTranscription.language = transcriptionLanguage;
+        }
+
         const instructions = `${callContext}\n\n## Call Control\n- When the conversation goal is complete or the callee asks to end, call the end_call tool.\n- Before calling end_call, say one short closing line.`;
-        const commonTooling = {
+        const legacyTooling = {
             input_audio_transcription: {
                 model: 'whisper-1'
             },
@@ -103,6 +128,10 @@ export class OpenAIWsService {
             ],
             tool_choice: 'auto'
         };
+        const gaTooling = {
+            tools: legacyTooling.tools,
+            tool_choice: legacyTooling.tool_choice
+        };
 
         const gaTurnDetection = this.buildTurnDetection(OPENAI_TURN_DETECTION);
         const legacyTurnDetectionType = OPENAI_TURN_DETECTION === 'semantic_vad' ? 'server_vad' : OPENAI_TURN_DETECTION;
@@ -118,22 +147,21 @@ export class OpenAIWsService {
                     audio: {
                         input: {
                             format: { type: 'audio/pcmu' },
-                            turn_detection: gaTurnDetection
+                            turn_detection: gaTurnDetection,
+                            transcription: gaTranscription
                         },
                         output: {
                             format: { type: 'audio/pcmu' },
-                            voice: this.config.voice
+                            voice: this.getGaOutputVoice()
                         }
                     },
                     instructions,
-                    temperature: this.config.temperature,
-                    ...commonTooling
+                    ...gaTooling
                 }
             }
             : {
                 type: 'session.update',
                 session: {
-                    // Legacy realtime websocket schema (Twilio-compatible today).
                     turn_detection: legacyTurnDetection,
                     input_audio_format: 'g711_ulaw',
                     output_audio_format: 'g711_ulaw',
@@ -141,11 +169,22 @@ export class OpenAIWsService {
                     instructions,
                     modalities: ['text', 'audio'],
                     temperature: this.config.temperature,
-                    ...commonTooling
+                    ...legacyTooling
                 }
             };
 
         this.webSocket.send(JSON.stringify(sessionUpdate));
+    }
+
+    /**
+     * Ask the model to start a response
+     */
+    public requestResponse(): void {
+        if (!this.webSocket || this.webSocket.readyState !== WebSocket.OPEN) {
+            return;
+        }
+
+        this.webSocket.send(JSON.stringify({ type: 'response.create' }));
     }
 
     /**
@@ -193,7 +232,7 @@ export class OpenAIWsService {
             }
         }));
 
-        this.webSocket.send(JSON.stringify({ type: 'response.create' }));
+        this.requestResponse();
     }
 
     /**

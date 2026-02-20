@@ -45,7 +45,12 @@ export class VoiceServer {
 
         const fromNumber = req.body.From;
         const toNumber = req.body.To;
-        const callContext = req.query.callContext?.toString();
+        const contextId = req.query.contextId?.toString();
+
+        if (!contextId) {
+            res.status(400).json({ error: 'Missing call context id' });
+            return;
+        }
 
         const twiml = new VoiceResponse();
         const connect = twiml.connect();
@@ -56,7 +61,7 @@ export class VoiceServer {
 
         stream.parameter({ name: 'fromNumber', value: fromNumber });
         stream.parameter({ name: 'toNumber', value: toNumber });
-        stream.parameter({ name: 'callContext', value: callContext });
+        stream.parameter({ name: 'contextId', value: contextId });
 
         res.writeHead(200, { 'Content-Type': 'text/xml' });
         res.end(twiml.toString());
