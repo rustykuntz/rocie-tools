@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-02-20T11:50:45.993Z",
+  "count": 1,
+  "items": [
+    {
+      "name": "vapi-voice-call",
+      "description": "Place outbound phone calls via the Vapi API with polling, transcripts, and optional force-end.",
+      "category": "general",
+      "path": "skills/vapi-voice-call/SKILL.md",
+      "homepage": "https://vapi.ai",
+      "source": "https://github.com/rustykuntz/rocie-tools/tree/main/vapi-call-cli-tool"
+    }
+  ]
+}
