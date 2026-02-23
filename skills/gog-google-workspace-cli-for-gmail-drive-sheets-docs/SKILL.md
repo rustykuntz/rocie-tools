@@ -20,10 +20,10 @@ Use `gog` for Gmail/Calendar/Drive/Contacts/Sheets/Docs. Requires OAuth setup.
 
 Setup (once)
 
-GCP project for client_secret.json:
-- Create a new project (e.g. "rocie-personal") — don't reuse existing
-- If creation blocked: use a personal/dev project, never production
-- If only production projects exist: stop and ask the user
+GCP project for client_secret.json (priority order):
+1. Create a new dedicated project (e.g. "rocie-personal")
+2. If creation is blocked, reuse an existing personal/dev project
+3. Never use a production project — if only production projects exist, ask the user
 
 - `gog auth credentials /path/to/client_secret.json`
 - `gog auth add you@gmail.com --services gmail,calendar,drive,contacts,docs,sheets`
@@ -40,6 +40,7 @@ Common commands
 - Gmail draft: `gog gmail drafts create --to a@b.com --subject "Hi" --body-file ./message.txt`
 - Gmail send draft: `gog gmail drafts send <draftId>`
 - Gmail reply: `gog gmail send --to a@b.com --subject "Re: Hi" --body "Reply" --reply-to-message-id <msgId>`
+- Calendar list calendars: `gog calendar list` — use this first to discover calendarId (usually the user's email)
 - Calendar list events: `gog calendar events <calendarId> --from <iso> --to <iso>`
 - Calendar create event: `gog calendar create <calendarId> --summary "Title" --from <iso> --to <iso>`
 - Calendar create with color: `gog calendar create <calendarId> --summary "Title" --from <iso> --to <iso> --event-color 7`
