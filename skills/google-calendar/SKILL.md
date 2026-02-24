@@ -1,6 +1,6 @@
 ---
 name: google-calendar
-description: Interact with Google Calendar via the Google Calendar API – list upcoming events, create new events, update or delete them. Use this skill when you need programmatic access to your calendar from Rocie.
+description: List, create, update, and delete Google Calendar events via API. Use for "what's on my calendar?", "schedule a call for Tuesday", or "move tomorrow's meeting".
 ---
 
 # Google Calendar Skill

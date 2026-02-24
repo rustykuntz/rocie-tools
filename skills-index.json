@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-20T12:07:29.801Z",
-  "count": 41,
+  "generated_at": "2026-02-24T03:20:02.884Z",
+  "count": 43,
   "items": [
     {
       "name": "alpaca-market-data",
-      "description": "Fetch real-time and historical market data (US stocks/ETFs, US options, crypto) from Alpaca via REST + WebSocket: quotes, trades, bars/OHLCV, snapshots, option chains/contracts, orderbooks.",
+      "description": "Check stock prices, crypto quotes, option chains, and historical market data via Alpaca. Use for \"what's AAPL at?\", portfolio lookups, OHLCV bars, and live market snapshots.",
       "category": "general",
       "path": "skills/alpaca-market-data/SKILL.md",
       "homepage": null,
@@ -12,7 +12,7 @@
     },
     {
       "name": "apple-calendar",
-      "description": "Apple Calendar.app integration for macOS. CRUD operations for events, search, and multi-calendar support.",
+      "description": "Create, edit, delete, and search calendar events in Apple Calendar on macOS. Use for \"add a meeting\", \"what's on my calendar\", or \"move my 3pm\".",
       "category": "general",
       "path": "skills/apple-calendar/SKILL.md",
       "homepage": null,
@@ -36,7 +36,7 @@
     },
     {
       "name": "aviation-weather",
-      "description": "Fetch aviation weather data (METAR, TAF, PIREPs) from aviationweather.gov. Use for flight planning, weather briefings, checking airport conditions, or any pilot-related weather queries. Triggers on \"METAR\", \"TAF\", \"flight weather\", \"airport weather\", \"aviation weather\", \"pilot report\", \"PIREP\", or specific ICAO codes.",
+      "description": "Fetch airport weather (METAR, TAF, PIREPs) for flight planning and briefings. Use for \"weather at KJFK\", \"TAF for EGLL\", or pre-flight weather checks.",
       "category": "general",
       "path": "skills/aviation-weather/SKILL.md",
       "homepage": null,
@@ -52,7 +52,7 @@
     },
     {
       "name": "discord",
-      "description": "Use when you need to control Discord from Rocie via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, create/edit/delete channels and categories, fetch permissions or member/role/channel info, set bot presence/activity, or handle moderation actions in Discord DMs or channels.",
+      "description": "Send messages, manage channels, run polls, upload media, and moderate in Discord. Use for \"post in #general\", \"create a thread\", \"send a DM\", or \"pin that message\".",
       "category": "general",
       "path": "skills/discord/SKILL.md",
       "homepage": null,
@@ -76,7 +76,7 @@
     },
     {
       "name": "flight-search",
-      "description": "Search Google Flights for prices, times, and airlines. No API key required.",
+      "description": "Search flights by route, date, and price on Google Flights (no API key). Use for \"find flights to Tokyo\", \"cheapest LAX to BKK\", or comparing airlines and times.",
       "category": "general",
       "path": "skills/flight-search/SKILL.md",
       "homepage": null,
@@ -84,15 +84,23 @@
     },
     {
       "name": "flight-tracker",
-      "description": "Track flights in real-time with detailed status, gate info, delays, and live position. Use when user asks to track a flight, check flight status, look up flight information by flight number (e.g., \"track AA100\", \"what's the status of United 2402\", \"check my flight BA123\"), or wants to display flight data in a formatted view similar to Flighty app.",
+      "description": "Track live flight status, delays, gates, and position. Use for \"track AA100\", \"is my flight on time?\", or \"where is BA123 right now?\".",
       "category": "general",
       "path": "skills/aviation-stack-flight-tracker/SKILL.md",
       "homepage": null,
       "source": null
     },
     {
+      "name": "gog-google-workspace-cli-for-gmail-drive-sheets-docs",
+      "description": "Google OAuth credentials configured for gog",
+      "category": "general",
+      "path": "skills/gog-google-workspace-cli-for-gmail-drive-sheets-docs/SKILL.md",
+      "homepage": "https://gogcli.sh",
+      "source": null
+    },
+    {
       "name": "google-ads",
-      "description": "Query, audit, and optimize Google Ads campaigns via API (google-ads Python SDK) or browser automation. Use when asked to check ad performance, pause campaigns/keywords, find wasted spend, audit conversion tracking, or optimize Google Ads accounts.",
+      "description": "Manage and optimize Google Ads — check performance, pause campaigns, find wasted spend, audit conversions. Use for \"how are my ads doing?\" or \"pause that keyword\".",
       "category": "general",
       "path": "skills/google-ads/SKILL.md",
       "homepage": null,
@@ -100,7 +108,7 @@
     },
     {
       "name": "google-calendar",
-      "description": "Interact with Google Calendar via the Google Calendar API – list upcoming events, create new events, update or delete them. Use this skill when you need programmatic access to your calendar from Rocie.",
+      "description": "List, create, update, and delete Google Calendar events via API. Use for \"what's on my calendar?\", \"schedule a call for Tuesday\", or \"move tomorrow's meeting\".",
       "category": "general",
       "path": "skills/google-calendar/SKILL.md",
       "homepage": null,
@@ -116,15 +124,23 @@
     },
     {
       "name": "hubspot",
-      "description": "HubSpot CRM and CMS API integration for contacts, companies, deals, owners, and content management.",
+      "description": "Manage HubSpot contacts, companies, deals, and content. Use for \"add a contact\", \"update the deal stage\", or \"pull company info from HubSpot\".",
       "category": "general",
       "path": "skills/hubspot/SKILL.md",
       "homepage": null,
       "source": null
     },
     {
+      "name": "huggingface",
+      "description": "Hugging Face Hub CLI",
+      "category": "general",
+      "path": "skills/huggingface/SKILL.md",
+      "homepage": "https://huggingface.co/docs/huggingface_hub/en/guides/cli",
+      "source": null
+    },
+    {
       "name": "meta-ads",
-      "description": "Full read/write integration with Meta (Facebook) Ads API for managing campaigns, ad sets, ads, and accessing performance insights/metrics.",
+      "description": "Manage Meta/Facebook ad campaigns, ad sets, and ads — create, edit, and pull performance metrics. Use for \"how are my Facebook ads doing?\" or \"pause that campaign\".",
       "category": "general",
       "path": "skills/meta-ads/SKILL.md",
       "homepage": null,
@@ -148,7 +164,7 @@
     },
     {
       "name": "nest-devices",
-      "description": "Control Nest smart home devices (thermostat, cameras, doorbell) via the Device Access API. Use when asked to check or adjust home temperature, view camera feeds, check who's at the door, monitor rooms, or set up temperature schedules.",
+      "description": "Control Nest thermostat, cameras, and doorbell. Use for \"set temperature to 24\", \"show front door camera\", or \"who's at the door?\".",
       "category": "general",
       "path": "skills/nest-devices/SKILL.md",
       "homepage": null,
@@ -212,7 +228,7 @@
     },
     {
       "name": "price-tracker",
-      "description": "Monitor product prices across Amazon, eBay, Walmart, and Best Buy to identify arbitrage opportunities and profit margins. Use when finding products to flip, monitoring competitor pricing, tracking price history, identifying arbitrage opportunities, or setting automated price alerts.",
+      "description": "Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy. Use for \"track this price\", \"find arbitrage opportunities\", or \"is this a good deal?\".",
       "category": "general",
       "path": "skills/price-tracker/SKILL.md",
       "homepage": null,
@@ -244,7 +260,7 @@
     },
     {
       "name": "supabase",
-      "description": "Connect to Supabase for database operations, vector search, and storage. Use for storing data, running SQL queries, similarity search with pgvector, and managing tables. Triggers on requests involving databases, vector stores, embeddings, or Supabase specifically.",
+      "description": "Run SQL queries, store data, and do vector/similarity search on Supabase. Use for \"save this to the database\", \"search similar items\", or \"create a table\".",
       "category": "general",
       "path": "skills/supabase/SKILL.md",
       "homepage": null,
@@ -292,7 +308,7 @@
     },
     {
       "name": "weather",
-      "description": "Get current weather and forecasts (no API key required).",
+      "description": "Get current weather and forecasts for any location (no API key). Use for \"what's the weather?\", \"will it rain tomorrow?\", or \"forecast for Bangkok\".",
       "category": "general",
       "path": "skills/weather/SKILL.md",
       "homepage": null,
@@ -308,7 +324,7 @@
     },
     {
       "name": "whatsapp-styler",
-      "description": "Skill to ensure all messages sent to WhatsApp follow the platform's specific formatting syntax. It prevents markdown bloat and ensures a clean, mobile-first reading experience.",
+      "description": "Format outgoing WhatsApp messages for clean mobile reading — proper WhatsApp syntax, no markdown bloat.",
       "category": "general",
       "path": "skills/whatsapp-styler/SKILL.md",
       "homepage": null,

@@ -1,6 +1,6 @@
 ---
 name: supabase
-description: Connect to Supabase for database operations, vector search, and storage. Use for storing data, running SQL queries, similarity search with pgvector, and managing tables. Triggers on requests involving databases, vector stores, embeddings, or Supabase specifically.
+description: Run SQL queries, store data, and do vector/similarity search on Supabase. Use for "save this to the database", "search similar items", or "create a table".
 metadata: {"requires":{"env":["SUPABASE_URL","SUPABASE_SERVICE_KEY"]}}
 ---
 

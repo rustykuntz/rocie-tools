@@ -1,6 +1,6 @@
 ---
 name: apple-calendar
-description: Apple Calendar.app integration for macOS. CRUD operations for events, search, and multi-calendar support.
+description: Create, edit, delete, and search calendar events in Apple Calendar on macOS. Use for "add a meeting", "what's on my calendar", or "move my 3pm".
 metadata: {"emoji":"📅","os":["darwin"]}
 ---
 

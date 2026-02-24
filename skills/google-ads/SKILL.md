@@ -1,6 +1,6 @@
 ---
 name: google-ads
-description: Query, audit, and optimize Google Ads campaigns via API (google-ads Python SDK) or browser automation. Use when asked to check ad performance, pause campaigns/keywords, find wasted spend, audit conversion tracking, or optimize Google Ads accounts.
+description: Manage and optimize Google Ads — check performance, pause campaigns, find wasted spend, audit conversions. Use for "how are my ads doing?" or "pause that keyword".
 metadata: {"rocie":{"requires":{"bins":["python3"]}}}
 ---
 

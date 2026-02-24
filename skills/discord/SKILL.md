@@ -1,6 +1,6 @@
 ---
 name: discord
-description: Use when you need to control Discord from Rocie via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, create/edit/delete channels and categories, fetch permissions or member/role/channel info, set bot presence/activity, or handle moderation actions in Discord DMs or channels.
+description: Send messages, manage channels, run polls, upload media, and moderate in Discord. Use for "post in #general", "create a thread", "send a DM", or "pin that message".
 ---
 # Discord Actions
 

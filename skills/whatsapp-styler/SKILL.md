@@ -1,6 +1,6 @@
 ---
 name: whatsapp-styler
-description: Skill to ensure all messages sent to WhatsApp follow the platform's specific formatting syntax. It prevents markdown bloat and ensures a clean, mobile-first reading experience.
+description: Format outgoing WhatsApp messages for clean mobile reading — proper WhatsApp syntax, no markdown bloat.
 ---
 
 # WhatsApp Styler

@@ -1,6 +1,6 @@
 ---
 name: nest-devices
-description: Control Nest smart home devices (thermostat, cameras, doorbell) via the Device Access API. Use when asked to check or adjust home temperature, view camera feeds, check who's at the door, monitor rooms, or set up temperature schedules.
+description: Control Nest thermostat, cameras, and doorbell. Use for "set temperature to 24", "show front door camera", or "who's at the door?".
 metadata:
   emoji: "🏠"
 ---

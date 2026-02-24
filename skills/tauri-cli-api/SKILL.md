@@ -1,6 +1,6 @@
 ---
 name: tauri-cli-api
-description: Tauri app and plugin lifecycle via the official CLI — init, dev, build, bundle, mobile (Android/iOS), plugins, permissions, capabilities, icons, signing, and diagnostics.
+description: Build, run, and manage Tauri desktop/mobile apps — init, dev, build, bundle, plugins, and signing. Use for "start my Tauri app", "build for iOS", or "add a plugin".
 metadata:
   homepage: https://tauri.app
   dependencies:

@@ -1,6 +1,6 @@
 ---
 name: hubspot
-description: HubSpot CRM and CMS API integration for contacts, companies, deals, owners, and content management.
+description: Manage HubSpot contacts, companies, deals, and content. Use for "add a contact", "update the deal stage", or "pull company info from HubSpot".
 metadata: {"rocie":{"requires":{"env":["HUBSPOT_ACCESS_TOKEN"]}}}
 ---
 

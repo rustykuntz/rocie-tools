@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-02-24T03:20:04.629Z",
+  "count": 4,
+  "items": [
+    {
+      "name": "local-business-scrape",
+      "description": "Scrape local business listings from Google Maps via Serper Places API and export to CSV.",
+      "path": "procedures/local-business-scrape.md",
+      "dependencies": {
+        "skills": [
+          "serper-web-search"
+        ],
+        "credentials": [
+          "credentials_tools.serper_api_key"
+        ]
+      }
+    },
+    {
+      "name": "price-comparison",
+      "description": "Compare prices for a specific product across sellers using Serper search snippets, localized to the user's country, language and currency.",
+      "path": "procedures/price-comparison.md",
+      "dependencies": {
+        "skills": [
+          "serper-web-search"
+        ],
+        "credentials": [
+          "credentials_tools.serper_api_key"
+        ]
+      }
+    },
+    {
+      "name": "product-review-research",
+      "description": "Gather trusted public reviews and opinions about a product, service, or topic from social media destinations.",
+      "path": "procedures/product-review-research.md",
+      "dependencies": {
+        "skills": [
+          "serper-web-search",
+          "agent-browser"
+        ],
+        "credentials": [
+          "credentials_tools.serper_api_key"
+        ]
+      }
+    },
+    {
+      "name": "public-web-research",
+      "description": "Research publicly available information by combining fast structured search with selective browser deep-dives.",
+      "path": "procedures/public-web-research.md",
+      "dependencies": {
+        "skills": [
+          "serper-web-search",
+          "agent-browser"
+        ],
+        "credentials": [
+          "credentials_tools.serper_api_key"
+        ]
+      }
+    }
+  ]
+}

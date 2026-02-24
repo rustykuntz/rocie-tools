@@ -1,6 +1,6 @@
 ---
 name: huggingface
-description: Interact with the Hugging Face Hub — download/upload models, datasets, and files, manage repos, search the Hub, run remote jobs, manage inference endpoints, and more.
+description: Download and upload models and datasets, manage repos, search, and run inference on Hugging Face. Use for "download llama model", "upload my dataset", or "search HF for…".
 
 metadata:
   homepage: https://huggingface.co/docs/huggingface_hub/en/guides/cli

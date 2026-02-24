@@ -1,6 +1,6 @@
 ---
 name: meta-ads
-description: Full read/write integration with Meta (Facebook) Ads API for managing campaigns, ad sets, ads, and accessing performance insights/metrics.
+description: Manage Meta/Facebook ad campaigns, ad sets, and ads — create, edit, and pull performance metrics. Use for "how are my Facebook ads doing?" or "pause that campaign".
 metadata: {"rocie":{"requires":{"env":["META_ACCESS_TOKEN","META_AD_ACCOUNT_ID"]}}}
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: spotify-player
-description: Terminal Spotify playback/search via spogo (preferred) or spotify_player.
+description: Play, pause, search, and queue music on Spotify from the terminal. Use for "play some jazz", "skip this song", or "search for…".
 homepage: https://www.spotify.com
 dependencies:
   spotify_player:

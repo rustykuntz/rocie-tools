@@ -1,6 +1,6 @@
 ---
 name: price-tracker
-description: Monitor product prices across Amazon, eBay, Walmart, and Best Buy to identify arbitrage opportunities and profit margins. Use when finding products to flip, monitoring competitor pricing, tracking price history, identifying arbitrage opportunities, or setting automated price alerts.
+description: Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy. Use for "track this price", "find arbitrage opportunities", or "is this a good deal?".
 ---
 
 # Price Tracker

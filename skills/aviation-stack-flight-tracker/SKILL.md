@@ -1,7 +1,7 @@
 ---
 name: flight-tracker
 version: 1.0.0
-description: Track flights in real-time with detailed status, gate info, delays, and live position. Use when user asks to track a flight, check flight status, look up flight information by flight number (e.g., "track AA100", "what's the status of United 2402", "check my flight BA123"), or wants to display flight data in a formatted view similar to Flighty app.
+description: Track live flight status, delays, gates, and position. Use for "track AA100", "is my flight on time?", or "where is BA123 right now?".
 ---
 
 # Flight Tracker

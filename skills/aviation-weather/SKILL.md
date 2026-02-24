@@ -1,6 +1,6 @@
 ---
 name: aviation-weather
-description: Fetch aviation weather data (METAR, TAF, PIREPs) from aviationweather.gov. Use for flight planning, weather briefings, checking airport conditions, or any pilot-related weather queries. Triggers on "METAR", "TAF", "flight weather", "airport weather", "aviation weather", "pilot report", "PIREP", or specific ICAO codes.
+description: Fetch airport weather (METAR, TAF, PIREPs) for flight planning and briefings. Use for "weather at KJFK", "TAF for EGLL", or pre-flight weather checks.
 ---
 
 # Aviation Weather

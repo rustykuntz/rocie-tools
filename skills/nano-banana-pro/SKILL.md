@@ -1,6 +1,6 @@
 ---
 name: nano-banana-pro
-description: Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro).
+description: Generate or edit images using AI (Gemini 2.0 Flash). Use for "create an image of…", "edit this photo", or "generate a logo".
 homepage: https://ai.google.dev/
 dependencies:
   gemini-api-key:

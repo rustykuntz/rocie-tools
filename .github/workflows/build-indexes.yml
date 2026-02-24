@@ -1,0 +1,32 @@
+name: Build indexes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "procedures/**"
+      - "scripts/build-*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Rebuild skills-index.json
+        run: node scripts/build-skills-index.mjs .
+
+      - name: Rebuild procedures-index.json
+        run: node scripts/build-procedures-index.mjs .
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add skills-index.json procedures-index.json
+          git diff --cached --quiet || git commit -m "chore: rebuild indexes" && git push

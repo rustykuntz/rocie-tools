@@ -1,6 +1,6 @@
 ---
 name: notion
-description: Notion API for creating and managing pages, databases, and blocks.
+description: Create and manage Notion pages, databases, and blocks via API. Use for "add a page to Notion", "query my database", or "update that Notion doc".
 homepage: https://developers.notion.com
 dependencies:
   notion-api-key:
