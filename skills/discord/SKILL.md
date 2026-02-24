@@ -1,6 +1,6 @@
 ---
 name: discord
-description: Send messages, manage channels, run polls, upload media, and moderate in Discord. Use for "post in #general", "create a thread", "send a DM", or "pin that message".
+description: Send messages, manage channels, run polls, and moderate in Discord.
 ---
 # Discord Actions
 

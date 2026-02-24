@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-24T03:20:02.884Z",
+  "generated_at": "2026-02-24T05:39:37.557Z",
   "count": 43,
   "items": [
     {
       "name": "alpaca-market-data",
-      "description": "Check stock prices, crypto quotes, option chains, and historical market data via Alpaca. Use for \"what's AAPL at?\", portfolio lookups, OHLCV bars, and live market snapshots.",
+      "description": "Check stock prices, crypto quotes, option chains, and market history via Alpaca.",
       "category": "general",
       "path": "skills/alpaca-market-data/SKILL.md",
       "homepage": null,
@@ -52,7 +52,7 @@
     },
     {
       "name": "discord",
-      "description": "Send messages, manage channels, run polls, upload media, and moderate in Discord. Use for \"post in #general\", \"create a thread\", \"send a DM\", or \"pin that message\".",
+      "description": "Send messages, manage channels, run polls, and moderate in Discord.",
       "category": "general",
       "path": "skills/discord/SKILL.md",
       "homepage": null,
@@ -76,7 +76,7 @@
     },
     {
       "name": "flight-search",
-      "description": "Search flights by route, date, and price on Google Flights (no API key). Use for \"find flights to Tokyo\", \"cheapest LAX to BKK\", or comparing airlines and times.",
+      "description": "Search flights by route, date, and price on Google Flights.",
       "category": "general",
       "path": "skills/flight-search/SKILL.md",
       "homepage": null,
@@ -100,7 +100,7 @@
     },
     {
       "name": "google-ads",
-      "description": "Manage and optimize Google Ads — check performance, pause campaigns, find wasted spend, audit conversions. Use for \"how are my ads doing?\" or \"pause that keyword\".",
+      "description": "Manage and optimize Google Ads / Adwords — performance, campaigns, spend, conversions.",
       "category": "general",
       "path": "skills/google-ads/SKILL.md",
       "homepage": null,
@@ -108,7 +108,7 @@
     },
     {
       "name": "google-calendar",
-      "description": "List, create, update, and delete Google Calendar events via API. Use for \"what's on my calendar?\", \"schedule a call for Tuesday\", or \"move tomorrow's meeting\".",
+      "description": "List, create, update, and delete Google Calendar events.",
       "category": "general",
       "path": "skills/google-calendar/SKILL.md",
       "homepage": null,
@@ -140,7 +140,7 @@
     },
     {
       "name": "meta-ads",
-      "description": "Manage Meta/Facebook ad campaigns, ad sets, and ads — create, edit, and pull performance metrics. Use for \"how are my Facebook ads doing?\" or \"pause that campaign\".",
+      "description": "Manage Meta/Facebook ad campaigns — create, edit, and check performance.",
       "category": "general",
       "path": "skills/meta-ads/SKILL.md",
       "homepage": null,
@@ -228,7 +228,7 @@
     },
     {
       "name": "price-tracker",
-      "description": "Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy. Use for \"track this price\", \"find arbitrage opportunities\", or \"is this a good deal?\".",
+      "description": "Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy.",
       "category": "general",
       "path": "skills/price-tracker/SKILL.md",
       "homepage": null,
@@ -252,7 +252,7 @@
     },
     {
       "name": "steam",
-      "description": "Browse, filter, and discover games in a Steam library. Filter by playtime, reviews, Steam Deck compatibility, genres, and tags. Use when user asks about their Steam games, what to play, game recommendations, or Steam Deck compatible games.",
+      "description": "Browse and filter your Steam game library — recommendations, playtime, Steam Deck compatibility.",
       "category": "general",
       "path": "skills/steam/SKILL.md",
       "homepage": null,
@@ -284,7 +284,7 @@
     },
     {
       "name": "vapi-voice-call",
-      "description": "Place outbound phone calls via the Vapi API with polling, transcripts, and optional force-end.",
+      "description": "Place outbound phone calls with transcripts via Vapi.",
       "category": "general",
       "path": "skills/vapi-voice-call/SKILL.md",
       "homepage": "https://vapi.ai",
@@ -332,7 +332,7 @@
     },
     {
       "name": "workout",
-      "description": "Track workouts, log sets, manage exercises and templates with workout-cli. Supports multi-user profiles. Use when helping users record gym sessions, view history, or analyze strength progression.",
+      "description": "Log body workouts, track sets, and analyze strength progression.",
       "category": "general",
       "path": "skills/workout/SKILL.md",
       "homepage": null,

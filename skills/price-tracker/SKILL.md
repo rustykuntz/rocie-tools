@@ -1,6 +1,6 @@
 ---
 name: price-tracker
-description: Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy. Use for "track this price", "find arbitrage opportunities", or "is this a good deal?".
+description: Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy.
 ---
 
 # Price Tracker

@@ -1,5 +1,5 @@
 # product-review-research
-Gather trusted public reviews and opinions about a product, service, or topic from social media destinations.
+Find reviews and opinions about a product or service.
 
 ## when-to-use
 - User asks what people think, whether something is worth it, whats better A or B?, or wants "best of" comparisons.

@@ -1,5 +1,5 @@
 # local-business-scrape
-Scrape local business listings from Google Maps via Serper Places API and export to CSV.
+List local businesses or places in an area and export to CSV.
 
 ## when-to-use
 - User wants a detailed bulk list of local businesses, places, or services in a specific location (e.g., "international kindergartens in Bangkok").

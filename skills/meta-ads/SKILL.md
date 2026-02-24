@@ -1,6 +1,6 @@
 ---
 name: meta-ads
-description: Manage Meta/Facebook ad campaigns, ad sets, and ads — create, edit, and pull performance metrics. Use for "how are my Facebook ads doing?" or "pause that campaign".
+description: Manage Meta/Facebook ad campaigns — create, edit, and check performance.
 metadata: {"rocie":{"requires":{"env":["META_ACCESS_TOKEN","META_AD_ACCOUNT_ID"]}}}
 ---
 

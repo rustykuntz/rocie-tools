@@ -1,6 +1,6 @@
 ---
 name: flight-search
-description: Search flights by route, date, and price on Google Flights (no API key). Use for "find flights to Tokyo", "cheapest LAX to BKK", or comparing airlines and times.
+description: Search flights by route, date, and price on Google Flights.
 homepage: https://github.com/Olafs-World/flight-search
 metadata:
   {

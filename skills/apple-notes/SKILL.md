@@ -1,6 +1,6 @@
 ---
 name: apple-notes
-description: Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks Rocie to add a note, list notes, search notes, or manage note folders.
+description: Create, search, edit, and manage Apple Notes on macOS.
 homepage: https://github.com/antoniorodr/memo
 dependencies:
   memo:

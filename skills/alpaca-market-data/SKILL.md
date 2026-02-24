@@ -1,6 +1,6 @@
 ---
 name: alpaca-market-data
-description: Check stock prices, crypto quotes, option chains, and historical market data via Alpaca. Use for "what's AAPL at?", portfolio lookups, OHLCV bars, and live market snapshots.
+description: Check stock prices, crypto quotes, option chains, and market history via Alpaca.
 homepage: https://docs.alpaca.markets/docs/alpaca-api-platform
 dependencies: curl, jq, wscat
 ---

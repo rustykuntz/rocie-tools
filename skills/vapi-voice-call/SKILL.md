@@ -1,6 +1,6 @@
 ---
 name: vapi-voice-call
-description: Place outbound phone calls via the Vapi API with polling, transcripts, and optional force-end.
+description: Place outbound phone calls with transcripts via Vapi.
 
 metadata:
   homepage: https://vapi.ai

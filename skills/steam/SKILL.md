@@ -1,6 +1,6 @@
 ---
 name: steam
-description: Browse, filter, and discover games in a Steam library. Filter by playtime, reviews, Steam Deck compatibility, genres, and tags. Use when user asks about their Steam games, what to play, game recommendations, or Steam Deck compatible games.
+description: Browse and filter your Steam game library — recommendations, playtime, Steam Deck compatibility.
 homepage: https://github.com/mjrussell/steam-cli
 metadata:
   emoji: "🎮"

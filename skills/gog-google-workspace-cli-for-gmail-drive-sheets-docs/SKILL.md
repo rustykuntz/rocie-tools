@@ -1,6 +1,6 @@
 ---
 name: gog-google-workspace-cli-for-gmail-drive-sheets-docs
-description: Read and send Gmail, manage Google Drive files, edit Sheets and Docs, and search Contacts. Use for "check my email", "upload to Drive", or "update the spreadsheet".
+description: Read and send Gmail, manage Drive, edit Sheets and Docs, search Contacts.
 metadata:
   homepage: https://gogcli.sh
   dependencies:

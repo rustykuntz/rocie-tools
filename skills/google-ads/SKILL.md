@@ -1,6 +1,6 @@
 ---
 name: google-ads
-description: Manage and optimize Google Ads — check performance, pause campaigns, find wasted spend, audit conversions. Use for "how are my ads doing?" or "pause that keyword".
+description: Manage and optimize Google Ads / Adwords — performance, campaigns, spend, conversions.
 metadata: {"rocie":{"requires":{"bins":["python3"]}}}
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: workout
-description: Track workouts, log sets, manage exercises and templates with workout-cli. Supports multi-user profiles. Use when helping users record gym sessions, view history, or analyze strength progression.
+description: Log body workouts, track sets, and analyze strength progression.
 metadata: {"emoji":"🏋️","requires":{"bins":["workout"]}}
 ---
 

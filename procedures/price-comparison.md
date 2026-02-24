@@ -1,5 +1,5 @@
 # price-comparison
-Compare prices for a specific product across sellers using Serper search snippets, localized to the user's country, language and currency.
+Compare prices for products / services across online sellers.
 
 ## when-to-use
 - User asks to compare prices, find the cheapest option, or check how much something costs.

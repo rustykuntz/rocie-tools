@@ -1,6 +1,6 @@
 ---
 name: google-calendar
-description: List, create, update, and delete Google Calendar events via API. Use for "what's on my calendar?", "schedule a call for Tuesday", or "move tomorrow's meeting".
+description: List, create, update, and delete Google Calendar events.
 ---
 
 # Google Calendar Skill

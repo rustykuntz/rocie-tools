@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-24T03:20:04.629Z",
+  "generated_at": "2026-02-24T05:15:58.426Z",
   "count": 4,
   "items": [
     {
       "name": "local-business-scrape",
-      "description": "Scrape local business listings from Google Maps via Serper Places API and export to CSV.",
+      "description": "List local businesses or places in an area and export to CSV.",
       "path": "procedures/local-business-scrape.md",
       "dependencies": {
         "skills": [
@@ -17,7 +17,7 @@
     },
     {
       "name": "price-comparison",
-      "description": "Compare prices for a specific product across sellers using Serper search snippets, localized to the user's country, language and currency.",
+      "description": "Compare prices for products / services across online sellers.",
       "path": "procedures/price-comparison.md",
       "dependencies": {
         "skills": [
@@ -30,7 +30,7 @@
     },
     {
       "name": "product-review-research",
-      "description": "Gather trusted public reviews and opinions about a product, service, or topic from social media destinations.",
+      "description": "Find reviews and opinions about a product or service.",
       "path": "procedures/product-review-research.md",
       "dependencies": {
         "skills": [
@@ -44,7 +44,7 @@
     },
     {
       "name": "public-web-research",
-      "description": "Research publicly available information by combining fast structured search with selective browser deep-dives.",
+      "description": "Search and research anything on the web.",
       "path": "procedures/public-web-research.md",
       "dependencies": {
         "skills": [

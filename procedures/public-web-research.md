@@ -1,5 +1,5 @@
 # public-web-research
-Research publicly available information by combining fast structured search with selective browser deep-dives.
+Search and research anything on the web.
 
 ## when-to-use
 - User asks to research, compare, or find information available on the public web.
