@@ -27,7 +27,7 @@ All commands return a JSON payload printed to stdout. Errors are printed to stde
 1. **Create a Google Cloud project** and enable the *Google Calendar API*.
 2. **Create OAuth credentials** (type *Desktop app*). Note the `client_id` and `client_secret`.
 3. Obtain a `refresh_token` using Google OAuth consent flow (external), then store it.
-4. Store credentials securely:
+4. Store credentials securely (no daemon restart needed — credential keys are read at runtime):
    ```bash
    set_config key=credentials_tools.google_client_id value=<value>
    set_config key=credentials_tools.google_client_secret value=<value>

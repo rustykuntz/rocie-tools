@@ -43,7 +43,7 @@ Twilio (for BYO outbound number — only needed when `--phone-number-id` is not 
 - `TWILIO_AUTH_TOKEN` — store as `credentials_tools.twilio_auth_token`
 - `TWILIO_NUMBER` — store as `credentials_tools.twilio_number`
 
-All credentials are auto-loaded from `~/.rocie/config.yaml`.
+All credentials are auto-loaded from `~/.rocie/config.yaml`. No daemon restart needed — credential keys are read at runtime.
 
 ## Usage
 

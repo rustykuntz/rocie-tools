@@ -184,7 +184,7 @@ export RENDER_API_KEY="<YOUR_API_KEY>"
 codex mcp add render --url https://mcp.render.com/mcp --bearer-token-env-var RENDER_API_KEY
 ```
 
-4) Restart Rocie, then retry `list_services()`.
+4) Ask the user to restart Rocie (MCP config is loaded at startup). Do NOT restart the daemon from within the agent.
 
 ### Other Tools
 
