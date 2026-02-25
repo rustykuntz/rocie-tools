@@ -18,7 +18,15 @@ metadata:
 
 Use `gog` for Gmail/Calendar/Drive/Contacts/Sheets/Docs. Requires OAuth setup.
 
-Setup (once)
+## Browser-assisted setup (preferred)
+
+Before asking the user to manually create credentials, check if Chrome has a logged-in Google account:
+1. Open `https://accounts.google.com` in agent-browser and read who's signed in
+2. If signed in: tell the user which account you found and ask for approval to use it for gog credentials
+3. If approved: open GCP console, create a project (or reuse existing non-production one), create OAuth Desktop credentials, build client_secret.json, and run `gog auth credentials` + `gog auth add`
+4. If not signed in: ask the user to log into Chrome first, or fall back to manual setup below
+
+## Manual setup (fallback)
 
 GCP project for client_secret.json (priority order):
 1. Create a new dedicated project (e.g. "rocie-personal")
@@ -58,20 +66,8 @@ Common commands
 
 Calendar Colors
 
-- Use `gog calendar colors` to see all available event colors (IDs 1-11)
-- Add colors to events with `--event-color <id>` flag
-- Event color IDs (from `gog calendar colors` output):
-  - 1: #a4bdfc
-  - 2: #7ae7bf
-  - 3: #dbadff
-  - 4: #ff887c
-  - 5: #fbd75b
-  - 6: #ffb878
-  - 7: #46d6db
-  - 8: #e1e1e1
-  - 9: #5484ed
-  - 10: #51b749
-  - 11: #dc2127
+- Use `gog calendar colors` to list available event colors (IDs 1-11)
+- Add colors with `--event-color <id>`
 
 Email Formatting
 
