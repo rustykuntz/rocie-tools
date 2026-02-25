@@ -33,24 +33,31 @@ function parseFrontmatter(text) {
   const data = {};
   const lines = m[1].split("\n");
   let inMetadata = false;
+  let metadataIndent = 0;
   for (const raw of lines) {
     const line = raw.replace(/\t/g, "  ");
     if (!line.trim()) continue;
-    if (/^metadata\s*:\s*$/i.test(line.trim())) {
-      inMetadata = true;
-      continue;
-    }
-    const kv = line.match(/^\s*([a-zA-Z0-9_.-]+)\s*:\s*(.+)\s*$/);
-    if (!kv) {
+    const indent = line.length - line.trimStart().length;
+
+    // Top-level keys (indent 0)
+    if (indent === 0) {
       inMetadata = false;
+      if (/^metadata\s*:\s*$/i.test(line.trim())) {
+        inMetadata = true;
+        metadataIndent = 0;
+        continue;
+      }
+      const kv = line.match(/^([a-zA-Z0-9_.-]+)\s*:\s*(.+)\s*$/);
+      if (kv) data[kv[1].trim()] = stripQuotes(kv[2]);
       continue;
     }
-    const key = kv[1].trim();
-    const value = stripQuotes(kv[2]);
+
+    // Direct children of metadata: (skip anything nested deeper)
     if (inMetadata) {
-      data[`metadata.${key}`] = value;
-    } else {
-      data[key] = value;
+      if (!metadataIndent) metadataIndent = indent;
+      if (indent !== metadataIndent) continue;
+      const kv = line.match(/^\s*([a-zA-Z0-9_.-]+)\s*:\s*(.+)\s*$/);
+      if (kv) data[`metadata.${kv[1].trim()}`] = stripQuotes(kv[2]);
     }
   }
   return { data, body: text.slice(m[0].length) };

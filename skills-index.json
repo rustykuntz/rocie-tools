@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T05:39:37.557Z",
+  "generated_at": "2026-02-25T04:42:25.129Z",
   "count": 43,
   "items": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "name": "apple-notes",
-      "description": "Apple Notes CLI",
+      "description": "Create, search, edit, and manage Apple Notes on macOS.",
       "category": "general",
       "path": "skills/apple-notes/SKILL.md",
       "homepage": null,
@@ -28,7 +28,7 @@
     },
     {
       "name": "apple-reminders",
-      "description": "Reminders permission granted for remindctl",
+      "description": "Add, edit, complete, and list reminders on macOS via remindctl. Use for \"remind me to…\", \"show my todos\", or \"mark X done\".",
       "category": "general",
       "path": "skills/apple-reminders/SKILL.md",
       "homepage": null,
@@ -44,7 +44,7 @@
     },
     {
       "name": "cloudflare-deploy",
-      "description": "Cloudflare account authenticated for Wrangler",
+      "description": "Deploy to Cloudflare Workers, tunnels, DNS and Pages.",
       "category": "general",
       "path": "skills/cloudflare-deploy/SKILL.md",
       "homepage": null,
@@ -60,7 +60,7 @@
     },
     {
       "name": "docx",
-      "description": "Secure XML parsing for Python",
+      "description": "Create, edit, and analyze Word documents (.docx) — formatting, tracked changes, comments, and text extraction.",
       "category": "general",
       "path": "skills/docx/SKILL.md",
       "homepage": null,
@@ -68,7 +68,7 @@
     },
     {
       "name": "figma",
-      "description": "Figma OAuth token in environment",
+      "description": "Fetch designs, screenshots, variables, and assets from Figma and translate them to code. Use for \"implement this Figma design\", \"grab assets from Figma\", or design-to-code tasks.",
       "category": "general",
       "path": "skills/figma/SKILL.md",
       "homepage": null,
@@ -92,7 +92,7 @@
     },
     {
       "name": "gog-google-workspace-cli-for-gmail-drive-sheets-docs",
-      "description": "Google OAuth credentials configured for gog",
+      "description": "Read and send Gmail, manage Drive, edit Sheets and Docs, search Contacts.",
       "category": "general",
       "path": "skills/gog-google-workspace-cli-for-gmail-drive-sheets-docs/SKILL.md",
       "homepage": "https://gogcli.sh",
@@ -116,7 +116,7 @@
     },
     {
       "name": "goplaces",
-      "description": "Google Places API key",
+      "description": "Look up places, reviews, and details via Google Places. Use for \"find coffee shops near me\", \"reviews for X restaurant\", or \"what's the address of Y?\".",
       "category": "general",
       "path": "skills/goplaces/SKILL.md",
       "homepage": null,
@@ -132,7 +132,7 @@
     },
     {
       "name": "huggingface",
-      "description": "Hugging Face Hub CLI",
+      "description": "Download models and datasets, manage repos, and run inference on Hugging Face.",
       "category": "general",
       "path": "skills/huggingface/SKILL.md",
       "homepage": "https://huggingface.co/docs/huggingface_hub/en/guides/cli",
@@ -156,7 +156,7 @@
     },
     {
       "name": "nano-banana-pro",
-      "description": "Gemini API key",
+      "description": "Generate or edit images using AI (Gemini 2.0 Flash). Use for \"create an image of…\", \"edit this photo\", or \"generate a logo\".",
       "category": "general",
       "path": "skills/nano-banana-pro/SKILL.md",
       "homepage": null,
@@ -172,7 +172,7 @@
     },
     {
       "name": "notion",
-      "description": "Notion API key stored locally",
+      "description": "Create and manage Notion pages, databases, and blocks via API. Use for \"add a page to Notion\", \"query my database\", or \"update that Notion doc\".",
       "category": "general",
       "path": "skills/notion/SKILL.md",
       "homepage": null,
@@ -180,7 +180,7 @@
     },
     {
       "name": "notion-knowledge-capture",
-      "description": "Notion MCP OAuth login completed",
+      "description": "Capture conversations and decisions into structured Notion pages.",
       "category": "general",
       "path": "skills/notion-knowledge-capture/SKILL.md",
       "homepage": null,
@@ -188,7 +188,7 @@
     },
     {
       "name": "notion-meeting-intelligence",
-      "description": "Notion MCP OAuth login completed",
+      "description": "Prepare meeting agendas and materials from Notion context.",
       "category": "general",
       "path": "skills/notion-meeting-intelligence/SKILL.md",
       "homepage": null,
@@ -196,7 +196,7 @@
     },
     {
       "name": "notion-research-documentation",
-      "description": "Notion MCP OAuth login completed",
+      "description": "Research across Notion and synthesize into briefs, comparisons, or reports.",
       "category": "general",
       "path": "skills/notion-research-documentation/SKILL.md",
       "homepage": null,
@@ -204,7 +204,7 @@
     },
     {
       "name": "notion-spec-to-implementation",
-      "description": "Notion MCP OAuth login completed",
+      "description": "Turn Notion specs/PRDs into implementation plans and tasks.",
       "category": "general",
       "path": "skills/notion-spec-to-implementation/SKILL.md",
       "homepage": null,
@@ -220,7 +220,7 @@
     },
     {
       "name": "pptx",
-      "description": "Secure XML parsing for Python",
+      "description": "Create, edit, and analyze PowerPoint presentations (.pptx) — layouts, speaker notes, comments, and content extraction.",
       "category": "general",
       "path": "skills/pptx/SKILL.md",
       "homepage": null,
@@ -236,7 +236,7 @@
     },
     {
       "name": "render-deploy",
-      "description": "Render API key configured for MCP",
+      "description": "Deploy and host full-stack web applications on Render platform.",
       "category": "general",
       "path": "skills/render-deploy/SKILL.md",
       "homepage": null,
@@ -244,7 +244,7 @@
     },
     {
       "name": "spotify-player",
-      "description": "spotify_player CLI",
+      "description": "Play, pause, search, and queue music on Spotify from the terminal. Use for \"play some jazz\", \"skip this song\", or \"search for…\".",
       "category": "general",
       "path": "skills/spotify-player/SKILL.md",
       "homepage": null,
@@ -268,7 +268,7 @@
     },
     {
       "name": "tauri-cli-api",
-      "description": "Tauri CLI",
+      "description": "Build, run, and manage Tauri desktop/mobile apps — init, dev, build, bundle, plugins, and signing. Use for \"start my Tauri app\", \"build for iOS\", or \"add a plugin\".",
       "category": "general",
       "path": "skills/tauri-cli-api/SKILL.md",
       "homepage": "https://tauri.app",
@@ -276,7 +276,7 @@
     },
     {
       "name": "trello",
-      "description": "Trello API token",
+      "description": "Manage Trello boards, lists, and cards. Use for \"create a card\", \"move task to Done\", or \"show my Trello board\".",
       "category": "general",
       "path": "skills/trello/SKILL.md",
       "homepage": null,
@@ -292,7 +292,7 @@
     },
     {
       "name": "vercel-deploy",
-      "description": "Vercel CLI authenticated",
+      "description": "Deploy and host full-stack web applications on Vercel platform.",
       "category": "general",
       "path": "skills/vercel-deploy/SKILL.md",
       "homepage": null,
@@ -300,7 +300,7 @@
     },
     {
       "name": "wacli",
-      "description": "WhatsApp account authenticated (QR login)",
+      "description": "Send WhatsApp messages to contacts or search/sync chat history via wacli CLI. Not for replying in live user conversations.",
       "category": "general",
       "path": "skills/wacli/SKILL.md",
       "homepage": null,
@@ -340,7 +340,7 @@
     },
     {
       "name": "xlsx",
-      "description": "LibreOffice (soffice) for formula recalculation",
+      "description": "Create, edit, and analyze spreadsheets (.xlsx, .csv) — formulas, formatting, data analysis, and visualization.",
       "category": "general",
       "path": "skills/xlsx/SKILL.md",
       "homepage": null,
