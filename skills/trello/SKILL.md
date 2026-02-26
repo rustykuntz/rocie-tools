@@ -2,17 +2,10 @@
 name: trello
 description: Manage Trello boards, lists, and cards. Use for "create a card", "move task to Done", or "show my Trello board".
 homepage: https://developer.atlassian.com/cloud/trello/rest/
-dependencies:
-  trello-api-key:
-    description: Trello API key
-    check: "test -n \"$TRELLO_API_KEY\""
-    install: "export TRELLO_API_KEY=YOUR_KEY"
-    interactive: [api-key]
-  trello-token:
-    description: Trello API token
-    check: "test -n \"$TRELLO_TOKEN\""
-    install: "export TRELLO_TOKEN=YOUR_TOKEN"
-    interactive: [api-key]
+metadata:
+  credentials:
+    - credentials_tools.trello_api_key
+    - credentials_tools.trello_token
 ---
 # Trello Skill
 
@@ -22,15 +15,22 @@ Manage Trello boards, lists, and cards directly from Rocie.
 
 1. Get your API key: https://trello.com/app-key
 2. Generate a token (click "Token" link on that page)
-3. Set environment variables:
-   ```bash
-   export TRELLO_API_KEY="your-api-key"
-   export TRELLO_TOKEN="your-token"
+3. Store in OS keychain:
+   ```
+   /secret credentials_tools.trello_api_key
+   /secret credentials_tools.trello_token
    ```
 
 ## Usage
 
-All commands use curl to hit the Trello REST API.
+All commands use curl via `credential_exec` — never use raw `export`:
+
+```
+credential_exec({
+  command: "<curl command below>",
+  credentials: { "TRELLO_API_KEY": "credentials_tools.trello_api_key", "TRELLO_TOKEN": "credentials_tools.trello_token" }
+})
+```
 
 ### List boards
 

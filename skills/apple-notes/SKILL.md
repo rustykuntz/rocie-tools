@@ -1,12 +1,15 @@
 ---
 name: apple-notes
 description: Create, search, edit, and manage Apple Notes on macOS.
-homepage: https://github.com/antoniorodr/memo
-dependencies:
-  memo:
-    description: Apple Notes CLI
-    check: "memo --help"
-    install: "brew tap antoniorodr/memo && brew install antoniorodr/memo/memo"
+
+
+metadata:
+  homepage: https://github.com/antoniorodr/memo
+  dependencies:
+    memo:
+      description: Apple Notes CLI
+      check: "memo --help"
+      install: "brew tap antoniorodr/memo && brew install antoniorodr/memo/memo"
 ---
 # Apple Notes CLI
 

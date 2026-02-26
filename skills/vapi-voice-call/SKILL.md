@@ -34,16 +34,16 @@ node ~/.rocie/tools/vapi-call-cli-tool/tools/vapi-call-cli-tool/dist/vapi-call-c
 
 ## Required credentials
 
-- `VAPI_API_KEY` — required. Store via `set_config` as `credentials_tools.vapi_api_key`.
+- `VAPI_API_KEY` — required. Store in OS keychain: `/secret credentials_tools.vapi_api_key`
 
 ## Optional credentials
 
 Twilio (for BYO outbound number — only needed when `--phone-number-id` is not provided and all three are set):
-- `TWILIO_ACCOUNT_SID` — store as `credentials_tools.twilio_account_sid`
-- `TWILIO_AUTH_TOKEN` — store as `credentials_tools.twilio_auth_token`
-- `TWILIO_NUMBER` — store as `credentials_tools.twilio_number`
+- `TWILIO_ACCOUNT_SID` — `/secret credentials_tools.twilio_account_sid`
+- `TWILIO_AUTH_TOKEN` — `/secret credentials_tools.twilio_auth_token`
+- `TWILIO_NUMBER` — `/secret credentials_tools.twilio_number`
 
-All credentials are auto-loaded from `~/.rocie/config.yaml`. No daemon restart needed — credential keys are read at runtime.
+All credentials are stored in the OS keychain via `/secret`. No tool exposes secret values — the runtime injects them when needed.
 
 ## Usage
 

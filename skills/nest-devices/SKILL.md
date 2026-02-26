@@ -40,20 +40,34 @@ curl -X POST https://oauth2.googleapis.com/token \
 
 ### 3. Store Credentials
 
-Store in 1Password or environment variables:
+Store in 1Password or OS keychain:
 
 **1Password** (recommended):
 Create an item with fields: `project_id`, `client_id`, `client_secret`, `refresh_token`
 
-**Environment variables:**
-```bash
-export NEST_PROJECT_ID="your-project-id"
-export NEST_CLIENT_ID="your-client-id"
-export NEST_CLIENT_SECRET="your-client-secret"
-export NEST_REFRESH_TOKEN="your-refresh-token"
+**OS keychain:**
+```
+/secret credentials_tools.nest_project_id
+/secret credentials_tools.nest_client_id
+/secret credentials_tools.nest_client_secret
+/secret credentials_tools.nest_refresh_token
 ```
 
 ## Usage
+
+All commands run via `credential_exec`:
+
+```
+credential_exec({
+  command: "python3 ./nest.py list",
+  credentials: {
+    "NEST_PROJECT_ID": "credentials_tools.nest_project_id",
+    "NEST_CLIENT_ID": "credentials_tools.nest_client_id",
+    "NEST_CLIENT_SECRET": "credentials_tools.nest_client_secret",
+    "NEST_REFRESH_TOKEN": "credentials_tools.nest_refresh_token"
+  }
+})
+```
 
 ### List devices
 ```bash

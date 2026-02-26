@@ -27,13 +27,13 @@ All commands return a JSON payload printed to stdout. Errors are printed to stde
 1. **Create a Google Cloud project** and enable the *Google Calendar API*.
 2. **Create OAuth credentials** (type *Desktop app*). Note the `client_id` and `client_secret`.
 3. Obtain a `refresh_token` using Google OAuth consent flow (external), then store it.
-4. Store credentials securely (no daemon restart needed — credential keys are read at runtime):
-   ```bash
-   set_config key=credentials_tools.google_client_id value=<value>
-   set_config key=credentials_tools.google_client_secret value=<value>
-   set_config key=credentials_tools.google_refresh_token value=<value>
-   set_config key=credentials_tools.google_calendar_id value=primary   # optional
+4. Store secrets in OS keychain (run each in the CLI):
    ```
+   /secret credentials_tools.google_client_id
+   /secret credentials_tools.google_client_secret
+   /secret credentials_tools.google_refresh_token
+   ```
+   Optional: set calendar ID via env var `GOOGLE_CALENDAR_ID=primary` (not a secret — defaults to `primary` if unset).
 5. Generate an access token when needed:
    ```bash
    GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... GOOGLE_REFRESH_TOKEN=... python3 ./refresh_token.py

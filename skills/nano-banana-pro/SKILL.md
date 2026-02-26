@@ -2,21 +2,22 @@
 name: nano-banana-pro
 description: Generate or edit images using AI (Gemini 2.0 Flash). Use for "create an image of…", "edit this photo", or "generate a logo".
 homepage: https://ai.google.dev/
-dependencies:
-  gemini-api-key:
-    description: Gemini API key
-    check: "test -n \"$GEMINI_API_KEY\""
-    install: "export GEMINI_API_KEY=YOUR_KEY"
-    interactive: [api-key]
+metadata:
+  credential: credentials_tools.gemini_api_key
 ---
 # Nano Banana Pro (Gemini 3 Pro Image)
 
 Use the bundled script to generate or edit images.
 
-Generate
+API key: `/secret credentials_tools.gemini_api_key`
 
-```bash
-uv run {baseDir}/scripts/generate_image.py --prompt "your image description" --filename "output.png" --resolution 1K
+All commands run via `credential_exec`:
+
+```
+credential_exec({
+  command: "uv run {baseDir}/scripts/generate_image.py --prompt \"your image description\" --filename \"output.png\" --resolution 1K",
+  credentials: { "GEMINI_API_KEY": "credentials_tools.gemini_api_key" }
+})
 ```
 
 Edit (single image)
@@ -30,10 +31,6 @@ Multi-image composition (up to 14 images)
 ```bash
 uv run {baseDir}/scripts/generate_image.py --prompt "combine these into one scene" --filename "output.png" -i img1.png -i img2.png -i img3.png
 ```
-
-API key
-
-- `GEMINI_API_KEY` env var
 
 Notes
 

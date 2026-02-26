@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpaca-market-data-cli-tool"
+version = "0.1.0"
+description = "Minimal Alpaca Market Data CLI for Rocie external-tool pattern"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "alpaca-py>=0.42.0",
+]
+
+[project.scripts]
+alpaca-market-data = "alpaca_market_data_cli:main"
+
+[tool.setuptools]
+py-modules = ["alpaca_market_data_cli"]

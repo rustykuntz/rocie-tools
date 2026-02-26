@@ -1,7 +1,10 @@
 ---
-name: flight-tracker
-version: 1.0.0
+name: aviation-stack-flight-tracker
 description: Track live flight status, delays, gates, and position. Use for "track AA100", "is my flight on time?", or "where is BA123 right now?".
+
+metadata:
+   version: 1.0.0
+   credential: credentials_tools.aviationstack_api_key
 ---
 
 # Flight Tracker
@@ -10,23 +13,20 @@ Track any flight worldwide using AviationStack API and display in a clean, Fligh
 
 ## Quick Start
 
-Track a flight by its IATA code:
+Track a flight using `credential_exec` (injects API key from OS keychain):
 
-```bash
-./track_flight.py AA100
-./track_flight.py UA2402
-./track_flight.py BA123
+```
+credential_exec({
+  command: "./track_flight.py AA100",
+  credentials: { "AVIATIONSTACK_API_KEY": "credentials_tools.aviationstack_api_key" },
+  workdir: "<skill directory>"
+})
 ```
 
 ## First-Time Setup
 
-Before using this skill, you need an API key (one-time setup):
-
 1. **Get a free API key** at https://aviationstack.com/signup/free (100 requests/month)
-2. **Set environment variable:**
-   ```bash
-   export AVIATIONSTACK_API_KEY='your-key-here'
-   ```
+2. **Store in OS keychain:** `/secret credentials_tools.aviationstack_api_key`
 3. **Install dependencies:**
    ```bash
    pip3 install requests

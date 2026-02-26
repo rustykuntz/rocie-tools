@@ -9,9 +9,7 @@ dependencies:
     install: "brew install steipete/tap/goplaces"
   goplaces-api-key:
     description: Google Places API key
-    check: "test -n \"$GOOGLE_PLACES_API_KEY\""
-    install: "export GOOGLE_PLACES_API_KEY=YOUR_KEY"
-    interactive: [api-key]
+    credential: credentials_tools.google_places_api_key
 ---
 # goplaces
 
@@ -23,8 +21,16 @@ Install
 
 Config
 
-- `GOOGLE_PLACES_API_KEY` required.
+- Store API key in OS keychain: `/secret credentials_tools.google_places_api_key`
 - Optional: `GOOGLE_PLACES_BASE_URL` for testing/proxying.
+
+All commands must run via `credential_exec`:
+```
+credential_exec({
+  command: "<goplaces command>",
+  credentials: { "GOOGLE_PLACES_API_KEY": "credentials_tools.google_places_api_key" }
+})
+```
 
 Common commands
 
