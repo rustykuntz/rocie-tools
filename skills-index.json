@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-25T06:04:40.432Z",
+  "generated_at": "2026-02-26T05:32:55.848Z",
   "count": 43,
   "items": [
     {
@@ -23,7 +23,7 @@
       "description": "Create, search, edit, and manage Apple Notes on macOS.",
       "category": "general",
       "path": "skills/apple-notes/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/antoniorodr/memo",
       "source": null
     },
     {
@@ -31,6 +31,14 @@
       "description": "Add, edit, complete, and list reminders on macOS via remindctl. Use for \"remind me to…\", \"show my todos\", or \"mark X done\".",
       "category": "general",
       "path": "skills/apple-reminders/SKILL.md",
+      "homepage": "https://github.com/steipete/remindctl",
+      "source": null
+    },
+    {
+      "name": "aviation-stack-flight-tracker",
+      "description": "Track live flight status, delays, gates, and position. Use for \"track AA100\", \"is my flight on time?\", or \"where is BA123 right now?\".",
+      "category": "general",
+      "path": "skills/aviation-stack-flight-tracker/SKILL.md",
       "homepage": null,
       "source": null
     },
@@ -79,14 +87,6 @@
       "description": "Search flights by route, date, and price on Google Flights.",
       "category": "general",
       "path": "skills/flight-search/SKILL.md",
-      "homepage": null,
-      "source": null
-    },
-    {
-      "name": "flight-tracker",
-      "description": "Track live flight status, delays, gates, and position. Use for \"track AA100\", \"is my flight on time?\", or \"where is BA123 right now?\".",
-      "category": "general",
-      "path": "skills/aviation-stack-flight-tracker/SKILL.md",
       "homepage": null,
       "source": null
     },
