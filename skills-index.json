@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-26T05:32:55.848Z",
+  "generated_at": "2026-02-27T08:33:21.275Z",
   "count": 43,
   "items": [
     {
@@ -7,7 +7,7 @@
       "description": "Check stock prices, crypto quotes, option chains, and market history via Alpaca.",
       "category": "general",
       "path": "skills/alpaca-market-data/SKILL.md",
-      "homepage": null,
+      "homepage": "https://docs.alpaca.markets/docs/alpaca-api-platform",
       "source": null
     },
     {
@@ -39,7 +39,7 @@
       "description": "Track live flight status, delays, gates, and position. Use for \"track AA100\", \"is my flight on time?\", or \"where is BA123 right now?\".",
       "category": "general",
       "path": "skills/aviation-stack-flight-tracker/SKILL.md",
-      "homepage": null,
+      "homepage": "https://aviationstack.com/",
       "source": null
     },
     {
@@ -47,7 +47,7 @@
       "description": "Fetch airport weather (METAR, TAF, PIREPs) for flight planning and briefings. Use for \"weather at KJFK\", \"TAF for EGLL\", or pre-flight weather checks.",
       "category": "general",
       "path": "skills/aviation-weather/SKILL.md",
-      "homepage": null,
+      "homepage": "https://aviationweather.gov/",
       "source": null
     },
     {
@@ -55,7 +55,7 @@
       "description": "Deploy to Cloudflare Workers, tunnels, DNS and Pages.",
       "category": "general",
       "path": "skills/cloudflare-deploy/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.cloudflare.com/",
       "source": null
     },
     {
@@ -79,7 +79,7 @@
       "description": "Fetch designs, screenshots, variables, and assets from Figma and translate them to code. Use for \"implement this Figma design\", \"grab assets from Figma\", or design-to-code tasks.",
       "category": "general",
       "path": "skills/figma/SKILL.md",
-      "homepage": null,
+      "homepage": "https://www.figma.com/",
       "source": null
     },
     {
@@ -87,7 +87,7 @@
       "description": "Search flights by route, date, and price on Google Flights.",
       "category": "general",
       "path": "skills/flight-search/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/Olafs-World/flight-search",
       "source": null
     },
     {
@@ -103,7 +103,7 @@
       "description": "Manage and optimize Google Ads / Adwords — performance, campaigns, spend, conversions.",
       "category": "general",
       "path": "skills/google-ads/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.google.com/google-ads/api/docs/start",
       "source": null
     },
     {
@@ -111,7 +111,7 @@
       "description": "List, create, update, and delete Google Calendar events.",
       "category": "general",
       "path": "skills/google-calendar/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.google.com/calendar",
       "source": null
     },
     {
@@ -119,7 +119,7 @@
       "description": "Look up places, reviews, and details via Google Places. Use for \"find coffee shops near me\", \"reviews for X restaurant\", or \"what's the address of Y?\".",
       "category": "general",
       "path": "skills/goplaces/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/steipete/goplaces",
       "source": null
     },
     {
@@ -127,7 +127,7 @@
       "description": "Manage HubSpot contacts, companies, deals, and content. Use for \"add a contact\", \"update the deal stage\", or \"pull company info from HubSpot\".",
       "category": "general",
       "path": "skills/hubspot/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.hubspot.com/",
       "source": null
     },
     {
@@ -143,7 +143,7 @@
       "description": "Manage Meta/Facebook ad campaigns — create, edit, and check performance.",
       "category": "general",
       "path": "skills/meta-ads/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.facebook.com/docs/marketing-apis/",
       "source": null
     },
     {
@@ -151,7 +151,7 @@
       "description": "Local speech-to-text with MLX Whisper (Apple Silicon optimized, no API key).",
       "category": "general",
       "path": "skills/mlx-whisper/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/ml-explore/mlx-examples/tree/main/whisper",
       "source": null
     },
     {
@@ -159,7 +159,7 @@
       "description": "Generate or edit images using AI (Gemini 2.0 Flash). Use for \"create an image of…\", \"edit this photo\", or \"generate a logo\".",
       "category": "general",
       "path": "skills/nano-banana-pro/SKILL.md",
-      "homepage": null,
+      "homepage": "https://ai.google.dev/",
       "source": null
     },
     {
@@ -167,7 +167,7 @@
       "description": "Control Nest thermostat, cameras, and doorbell. Use for \"set temperature to 24\", \"show front door camera\", or \"who's at the door?\".",
       "category": "general",
       "path": "skills/nest-devices/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.google.com/nest/device-access",
       "source": null
     },
     {
@@ -175,7 +175,7 @@
       "description": "Create and manage Notion pages, databases, and blocks via API. Use for \"add a page to Notion\", \"query my database\", or \"update that Notion doc\".",
       "category": "general",
       "path": "skills/notion/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developers.notion.com",
       "source": null
     },
     {
@@ -215,7 +215,7 @@
       "description": "Local speech-to-text with Parakeet MLX (ASR) for Apple Silicon (no API key).",
       "category": "general",
       "path": "skills/parakeet-mlx/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/senstella/parakeet-mlx",
       "source": null
     },
     {
@@ -239,7 +239,7 @@
       "description": "Deploy and host full-stack web applications on Render platform.",
       "category": "general",
       "path": "skills/render-deploy/SKILL.md",
-      "homepage": null,
+      "homepage": "https://render.com/",
       "source": null
     },
     {
@@ -247,7 +247,7 @@
       "description": "Play, pause, search, and queue music on Spotify from the terminal. Use for \"play some jazz\", \"skip this song\", or \"search for…\".",
       "category": "general",
       "path": "skills/spotify-player/SKILL.md",
-      "homepage": null,
+      "homepage": "https://www.spotify.com",
       "source": null
     },
     {
@@ -255,7 +255,7 @@
       "description": "Browse and filter your Steam game library — recommendations, playtime, Steam Deck compatibility.",
       "category": "general",
       "path": "skills/steam/SKILL.md",
-      "homepage": null,
+      "homepage": "https://github.com/mjrussell/steam-cli",
       "source": null
     },
     {
@@ -263,7 +263,7 @@
       "description": "Run SQL queries, store data, and do vector/similarity search on Supabase. Use for \"save this to the database\", \"search similar items\", or \"create a table\".",
       "category": "general",
       "path": "skills/supabase/SKILL.md",
-      "homepage": null,
+      "homepage": "https://supabase.com/",
       "source": null
     },
     {
@@ -279,7 +279,7 @@
       "description": "Manage Trello boards, lists, and cards. Use for \"create a card\", \"move task to Done\", or \"show my Trello board\".",
       "category": "general",
       "path": "skills/trello/SKILL.md",
-      "homepage": null,
+      "homepage": "https://developer.atlassian.com/cloud/trello/rest/",
       "source": null
     },
     {
@@ -288,7 +288,7 @@
       "category": "general",
       "path": "skills/vapi-voice-call/SKILL.md",
       "homepage": "https://vapi.ai",
-      "source": "https://github.com/rustykuntz/rocie-tools/tree/main/tools/vapi-call-cli-tool"
+      "source": null
     },
     {
       "name": "vercel-deploy",
@@ -303,7 +303,7 @@
       "description": "Send WhatsApp messages to contacts or search/sync chat history via wacli CLI. Not for replying in live user conversations.",
       "category": "general",
       "path": "skills/wacli/SKILL.md",
-      "homepage": null,
+      "homepage": "https://wacli.sh",
       "source": null
     },
     {
@@ -311,7 +311,7 @@
       "description": "Get current weather and forecasts for any location (no API key). Use for \"what's the weather?\", \"will it rain tomorrow?\", or \"forecast for Bangkok\".",
       "category": "general",
       "path": "skills/weather/SKILL.md",
-      "homepage": null,
+      "homepage": "https://wttr.in/:help",
       "source": null
     },
     {
