@@ -1,7 +1,8 @@
 ---
 name: weather
 description: Get current weather and forecasts for any location (no API key). Use for "what's the weather?", "will it rain tomorrow?", or "forecast for Bangkok".
-homepage: https://wttr.in/:help
+metadata:
+  homepage: https://wttr.in/:help
 ---
 # Weather
 

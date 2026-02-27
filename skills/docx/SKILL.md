@@ -2,31 +2,32 @@
 name: docx
 description: Create, edit, and analyze Word documents (.docx) — formatting, tracked changes, comments, and text extraction.
 license: Proprietary. LICENSE.txt has complete terms
-dependencies:
-  python3:
-    description: Python 3.10+ required for ooxml scripts
-    check: "python3 -c \"import sys; assert sys.version_info >= (3, 10)\""
-    install: "Use Python 3.10+ (pyenv/asdf/system package)"
-  pandoc:
-    description: Document conversion tool (docx to markdown)
-    check: "pandoc --version"
-    install: "sudo apt-get install pandoc"
-  docx:
-    description: docx JS library CLI
-    check: "docx --help"
-    install: "npm install -g docx"
-  libreoffice:
-    description: LibreOffice CLI (soffice) for DOCX->PDF conversion
-    check: "soffice --version"
-    install: "sudo apt-get install libreoffice"
-  poppler-utils:
-    description: PDF tools (pdftoppm) for PDF->image conversion
-    check: "pdftoppm -h"
-    install: "sudo apt-get install poppler-utils"
-  defusedxml:
-    description: Secure XML parsing for Python
-    check: "python3 -c \"import defusedxml\""
-    install: "pip install defusedxml"
+metadata:
+  dependencies:
+    python3:
+      description: Python 3.10+ required for ooxml scripts
+      check: "python3 -c \"import sys; assert sys.version_info >= (3, 10)\""
+      install: "Use Python 3.10+ (pyenv/asdf/system package)"
+    pandoc:
+      description: Document conversion tool (docx to markdown)
+      check: "pandoc --version"
+      install: "sudo apt-get install pandoc"
+    docx:
+      description: docx JS library CLI
+      check: "docx --help"
+      install: "npm install -g docx"
+    libreoffice:
+      description: LibreOffice CLI (soffice) for DOCX->PDF conversion
+      check: "soffice --version"
+      install: "sudo apt-get install libreoffice"
+    poppler-utils:
+      description: PDF tools (pdftoppm) for PDF->image conversion
+      check: "pdftoppm -h"
+      install: "sudo apt-get install poppler-utils"
+    defusedxml:
+      description: Secure XML parsing for Python
+      check: "python3 -c \"import defusedxml\""
+      install: "pip install defusedxml"
 ---
 # DOCX creation, editing, and analysis
 

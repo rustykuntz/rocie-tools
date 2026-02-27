@@ -1,14 +1,7 @@
 ---
 name: weight-loss
 description: Track weight loss journey with weigh-ins, trend analysis, and goal milestones
-author: clawd-team
-version: 1.0.0
-triggers:
-  - "log weight"
-  - "weight loss progress"
-  - "weigh in"
-  - "goal weight"
-  - "pounds lost"
+metadata: {}
 ---
 
 # Weight Loss

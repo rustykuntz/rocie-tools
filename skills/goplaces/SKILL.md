@@ -1,16 +1,20 @@
 ---
 name: goplaces
 description: Look up places, reviews, and details via Google Places. Use for "find coffee shops near me", "reviews for X restaurant", or "what's the address of Y?".
-homepage: https://github.com/steipete/goplaces
-dependencies:
-  goplaces:
-    description: goplaces CLI
-    check: "goplaces --help"
-    install: "brew install steipete/tap/goplaces"
-  goplaces-api-key:
-    description: Google Places API key
-    credential: credentials_tools.google_places_api_key
+metadata:
+  homepage: https://github.com/steipete/goplaces
+  credential: credentials_tools.google_places_api_key
+  dependencies:
+    goplaces:
+      description: goplaces CLI
+      check: "goplaces --help"
+      install: "brew install steipete/tap/goplaces"
 ---
+
+## Credential
+
+Key: `credentials_tools.google_places_api_key` — check availability via `get_config credentials_tools.google_places_api_key`.
+
 # goplaces
 
 Modern Google Places API (New) CLI. Human output by default, `--json` for scripts.

@@ -1,7 +1,11 @@
 ---
 name: workout
 description: Log body workouts, track sets, and analyze strength progression.
-metadata: {"emoji":"🏋️","requires":{"bins":["workout"]}}
+metadata:
+  dependencies:
+    workout:
+      description: Workout CLI
+      check: "which workout"
 ---
 
 # Workout CLI

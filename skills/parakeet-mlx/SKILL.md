@@ -1,8 +1,13 @@
 ---
 name: parakeet-mlx
 description: Local speech-to-text with Parakeet MLX (ASR) for Apple Silicon (no API key).
-homepage: https://github.com/senstella/parakeet-mlx
-metadata: {"emoji":"🦜","requires":{"bins":["parakeet-mlx"]},"install":[{"id":"uv-tool","kind":"uv","formula":"parakeet-mlx","bins":["parakeet-mlx"],"label":"Install Parakeet MLX CLI (uv tool install)"}]}
+metadata:
+  homepage: https://github.com/senstella/parakeet-mlx
+  dependencies:
+    parakeet-mlx:
+      description: Parakeet MLX CLI
+      check: "which parakeet-mlx"
+      install: "uv tool install parakeet-mlx"
 ---
 
 # Parakeet MLX (CLI)

@@ -1,7 +1,8 @@
 ---
 name: meta-ads
 description: Manage Meta/Facebook ad campaigns — create, edit, and check performance.
-metadata: {"rocie":{"requires":{"env":["META_ACCESS_TOKEN","META_AD_ACCOUNT_ID"]}}}
+metadata:
+  homepage: https://developers.facebook.com/docs/marketing-apis/
 ---
 
 # Meta Ads API

@@ -2,35 +2,36 @@
 name: pptx
 description: Create, edit, and analyze PowerPoint presentations (.pptx) — layouts, speaker notes, comments, and content extraction.
 license: Proprietary. LICENSE.txt has complete terms
-dependencies:
-  python3:
-    description: Python 3.10+ required for ooxml scripts
-    check: "python3 -c \"import sys; assert sys.version_info >= (3, 10)\""
-    install: "Use Python 3.10+ (pyenv/asdf/system package)"
-  markitdown:
-    description: Markdown extraction for PPTX
-    check: "python3 -c \"import markitdown\""
-    install: "pip install \"markitdown[pptx]\""
-  pptxgenjs:
-    description: Create PPTX via JavaScript
-    check: "pptxgenjs --help"
-    install: "npm install -g pptxgenjs"
-  playwright:
-    description: HTML rendering for html2pptx
-    check: "playwright --version"
-    install: "npm install -g playwright"
-  react-icons:
-    description: Icon library for PPTX generation
-    check: "node -e \"require('react-icons')\""
-    install: "npm install -g react-icons react react-dom"
-  sharp:
-    description: Image processing for SVG rasterization
-    check: "node -e \"require('sharp')\""
-    install: "npm install -g sharp"
-  defusedxml:
-    description: Secure XML parsing for Python
-    check: "python3 -c \"import defusedxml\""
-    install: "pip install defusedxml"
+metadata:
+  dependencies:
+    python3:
+      description: Python 3.10+ required for ooxml scripts
+      check: "python3 -c \"import sys; assert sys.version_info >= (3, 10)\""
+      install: "Use Python 3.10+ (pyenv/asdf/system package)"
+    markitdown:
+      description: Markdown extraction for PPTX
+      check: "python3 -c \"import markitdown\""
+      install: "pip install \"markitdown[pptx]\""
+    pptxgenjs:
+      description: Create PPTX via JavaScript
+      check: "pptxgenjs --help"
+      install: "npm install -g pptxgenjs"
+    playwright:
+      description: HTML rendering for html2pptx
+      check: "playwright --version"
+      install: "npm install -g playwright"
+    react-icons:
+      description: Icon library for PPTX generation
+      check: "node -e \"require('react-icons')\""
+      install: "npm install -g react-icons react react-dom"
+    sharp:
+      description: Image processing for SVG rasterization
+      check: "node -e \"require('sharp')\""
+      install: "npm install -g sharp"
+    defusedxml:
+      description: Secure XML parsing for Python
+      check: "python3 -c \"import defusedxml\""
+      install: "pip install defusedxml"
 ---
 # PPTX creation, editing, and analysis
 

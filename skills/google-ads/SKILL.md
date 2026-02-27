@@ -1,7 +1,16 @@
 ---
 name: google-ads
 description: Manage and optimize Google Ads / Adwords — performance, campaigns, spend, conversions.
-metadata: {"rocie":{"requires":{"bins":["python3"]}}}
+metadata:
+  homepage: https://developers.google.com/google-ads/api/docs/start
+  dependencies:
+    python3:
+      description: Python 3 runtime
+      check: "which python3"
+    google-ads-sdk:
+      description: Google Ads Python SDK
+      check: "python3 -c \"from google.ads.googleads.client import GoogleAdsClient\""
+      install: "pip install google-ads"
 ---
 
 # Google Ads Skill

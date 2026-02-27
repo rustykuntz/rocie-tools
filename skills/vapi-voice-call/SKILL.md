@@ -1,11 +1,14 @@
 ---
 name: vapi-voice-call
 description: Place outbound phone calls with transcripts via Vapi.
-
 metadata:
   homepage: https://vapi.ai
-  source: https://github.com/rustykuntz/rocie-tools/tree/main/tools/vapi-call-cli-tool
+  credential: credentials_tools.vapi_api_key
 ---
+
+## Credential
+
+Key: `credentials_tools.vapi_api_key` — check availability via `get_config credentials_tools.vapi_api_key`.
 
 # vapi-voice-call
 

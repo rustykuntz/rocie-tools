@@ -1,10 +1,15 @@
 ---
 name: nano-banana-pro
 description: Generate or edit images using AI (Gemini 2.0 Flash). Use for "create an image of…", "edit this photo", or "generate a logo".
-homepage: https://ai.google.dev/
 metadata:
+  homepage: https://ai.google.dev/
   credential: credentials_tools.gemini_api_key
 ---
+
+## Credential
+
+Key: `credentials_tools.gemini_api_key` — check availability via `get_config credentials_tools.gemini_api_key`.
+
 # Nano Banana Pro (Gemini 3 Pro Image)
 
 Use the bundled script to generate or edit images.

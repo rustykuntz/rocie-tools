@@ -2,19 +2,20 @@
 name: xlsx
 description: Create, edit, and analyze spreadsheets (.xlsx, .csv) — formulas, formatting, data analysis, and visualization.
 license: Proprietary. LICENSE.txt has complete terms
-dependencies:
-  pandas:
-    description: Data analysis for spreadsheets
-    check: "python3 -c \"import pandas\""
-    install: "pip install pandas"
-  openpyxl:
-    description: Excel read/write with formatting and formulas
-    check: "python3 -c \"import openpyxl\""
-    install: "pip install openpyxl"
-  libreoffice:
-    description: LibreOffice (soffice) for formula recalculation
-    check: "soffice --version"
-    install: "brew install --cask libreoffice"
+metadata:
+  dependencies:
+    pandas:
+      description: Data analysis for spreadsheets
+      check: "python3 -c \"import pandas\""
+      install: "pip install pandas"
+    openpyxl:
+      description: Excel read/write with formatting and formulas
+      check: "python3 -c \"import openpyxl\""
+      install: "pip install openpyxl"
+    libreoffice:
+      description: LibreOffice (soffice) for formula recalculation
+      check: "soffice --version"
+      install: "brew install --cask libreoffice"
 ---
 # Requirements for Outputs
 

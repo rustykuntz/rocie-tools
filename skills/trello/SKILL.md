@@ -1,12 +1,17 @@
 ---
 name: trello
 description: Manage Trello boards, lists, and cards. Use for "create a card", "move task to Done", or "show my Trello board".
-homepage: https://developer.atlassian.com/cloud/trello/rest/
 metadata:
-  credentials:
-    - credentials_tools.trello_api_key
-    - credentials_tools.trello_token
+  homepage: https://developer.atlassian.com/cloud/trello/rest/
+  credential: credentials_tools.trello_api_key
 ---
+
+## Credential
+
+Key: `credentials_tools.trello_api_key` — check availability via `get_config credentials_tools.trello_api_key`.
+
+Also requires `credentials_tools.trello_token`.
+
 # Trello Skill
 
 Manage Trello boards, lists, and cards directly from Rocie.

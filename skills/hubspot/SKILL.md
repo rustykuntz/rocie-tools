@@ -1,7 +1,8 @@
 ---
 name: hubspot
 description: Manage HubSpot contacts, companies, deals, and content. Use for "add a contact", "update the deal stage", or "pull company info from HubSpot".
-metadata: {"rocie":{"requires":{"env":["HUBSPOT_ACCESS_TOKEN"]}}}
+metadata:
+  homepage: https://developers.hubspot.com/
 ---
 
 # HubSpot Skill

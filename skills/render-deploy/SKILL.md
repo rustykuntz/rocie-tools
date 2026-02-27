@@ -1,16 +1,18 @@
 ---
 name: render-deploy
 description: Deploy and host full-stack web applications on Render platform.
-dependencies:
-  render:
-    description: Render CLI
-    check: "render --version"
-    install: "brew install render"
-  render-api-key:
-    description: Render API key configured for MCP
-    check: "test -n \"$RENDER_API_KEY\""
-    install: "export RENDER_API_KEY=YOUR_KEY"
-    interactive: [api-key]
+metadata:
+  homepage: https://render.com/
+  dependencies:
+    render:
+      description: Render CLI
+      check: "render --version"
+      install: "brew install render"
+    render-api-key:
+      description: Render API key configured for MCP
+      check: "test -n \"$RENDER_API_KEY\""
+      install: "export RENDER_API_KEY=YOUR_KEY"
+      interactive: [api-key]
 ---
 
 # Deploy to Render

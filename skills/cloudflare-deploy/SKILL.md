@@ -1,16 +1,18 @@
 ---
 name: cloudflare-deploy
 description: Deploy to Cloudflare Workers, tunnels, DNS and Pages.
-dependencies:
-  wrangler:
-    description: Cloudflare Wrangler CLI
-    check: "wrangler --version"
-    install: "npm install -g wrangler"
-  cloudflare-auth:
-    description: Cloudflare account authenticated for Wrangler
-    check: "wrangler whoami"
-    install: "wrangler login"
-    interactive: [oauth]
+metadata:
+  homepage: https://developers.cloudflare.com/
+  dependencies:
+    wrangler:
+      description: Cloudflare Wrangler CLI
+      check: "wrangler --version"
+      install: "npm install -g wrangler"
+    cloudflare-auth:
+      description: Cloudflare account authenticated for Wrangler
+      check: "wrangler whoami"
+      install: "wrangler login"
+      interactive: [oauth]
 ---
 
 # Cloudflare Deploy

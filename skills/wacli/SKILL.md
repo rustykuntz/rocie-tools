@@ -1,17 +1,18 @@
 ---
 name: wacli
 description: Send WhatsApp messages to contacts or search/sync chat history via wacli CLI. Not for replying in live user conversations.
-homepage: https://wacli.sh
-dependencies:
-  wacli:
-    description: wacli CLI
-    check: "wacli --help"
-    install: "brew install steipete/tap/wacli"
-  wacli-auth:
-    description: WhatsApp account authenticated (QR login)
-    check: "wacli doctor"
-    install: "wacli auth"
-    interactive: [browser-login]
+metadata:
+  homepage: https://wacli.sh
+  dependencies:
+    wacli:
+      description: wacli CLI
+      check: "wacli --help"
+      install: "brew install steipete/tap/wacli"
+    wacli-auth:
+      description: WhatsApp account authenticated (QR login)
+      check: "wacli doctor"
+      install: "wacli auth"
+      interactive: [browser-login]
 ---
 # wacli
 

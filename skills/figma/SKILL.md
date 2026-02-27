@@ -1,16 +1,18 @@
 ---
 name: figma
 description: Fetch designs, screenshots, variables, and assets from Figma and translate them to code. Use for "implement this Figma design", "grab assets from Figma", or design-to-code tasks.
-dependencies:
-  figma-mcp:
-    description: Figma MCP server configured
-    check: "grep -q \"mcp.figma.com\" ~/.codex/config.toml"
-    install: "printf '\\n[mcp_servers.figma]\\nurl = \"https://mcp.figma.com/mcp\"\\nbearer_token_env_var = \"FIGMA_OAUTH_TOKEN\"\\nhttp_headers = { \"X-Figma-Region\" = \"us-east-1\" }\\n' >> ~/.codex/config.toml"
-  figma-oauth-token:
-    description: Figma OAuth token in environment
-    check: "test -n \"$FIGMA_OAUTH_TOKEN\""
-    install: "export FIGMA_OAUTH_TOKEN=YOUR_TOKEN"
-    interactive: [oauth]
+metadata:
+  homepage: https://www.figma.com/
+  dependencies:
+    figma-mcp:
+      description: Figma MCP server configured
+      check: "grep -q \"mcp.figma.com\" ~/.codex/config.toml"
+      install: "printf '\\n[mcp_servers.figma]\\nurl = \"https://mcp.figma.com/mcp\"\\nbearer_token_env_var = \"FIGMA_OAUTH_TOKEN\"\\nhttp_headers = { \"X-Figma-Region\" = \"us-east-1\" }\\n' >> ~/.codex/config.toml"
+    figma-oauth-token:
+      description: Figma OAuth token in environment
+      check: "test -n \"$FIGMA_OAUTH_TOKEN\""
+      install: "export FIGMA_OAUTH_TOKEN=YOUR_TOKEN"
+      interactive: [oauth]
 ---
 
 # Figma MCP

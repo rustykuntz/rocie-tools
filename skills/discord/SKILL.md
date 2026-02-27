@@ -1,6 +1,7 @@
 ---
 name: discord
 description: Send messages, manage channels, run polls, and moderate in Discord.
+metadata: {}
 ---
 # Discord Actions
 

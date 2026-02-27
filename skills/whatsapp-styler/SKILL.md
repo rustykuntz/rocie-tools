@@ -1,6 +1,7 @@
 ---
 name: whatsapp-styler
 description: Format outgoing WhatsApp messages for clean mobile reading — proper WhatsApp syntax, no markdown bloat.
+metadata: {}
 ---
 
 # WhatsApp Styler

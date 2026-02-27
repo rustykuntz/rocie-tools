@@ -3,16 +3,16 @@ name: notion-research-documentation
 description: Research across Notion and synthesize into briefs, comparisons, or reports.
 metadata:
   short-description: Research Notion content and produce briefs/reports
-dependencies:
-  notion-mcp:
-    description: Notion MCP server configured
-    check: "codex mcp list | grep -q notion"
-    install: "codex mcp add notion --url https://mcp.notion.com/mcp"
-  notion-mcp-auth:
-    description: Notion MCP OAuth login completed
-    check: "codex mcp login notion"
-    install: "codex mcp login notion"
-    interactive: [oauth]
+  dependencies:
+    notion-mcp:
+      description: Notion MCP server configured
+      check: "codex mcp list | grep -q notion"
+      install: "codex mcp add notion --url https://mcp.notion.com/mcp"
+    notion-mcp-auth:
+      description: Notion MCP OAuth login completed
+      check: "codex mcp login notion"
+      install: "codex mcp login notion"
+      interactive: [oauth]
 ---
 
 # Research & Documentation

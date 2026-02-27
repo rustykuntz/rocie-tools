@@ -1,25 +1,13 @@
 ---
 name: flight-search
 description: Search flights by route, date, and price on Google Flights.
-homepage: https://github.com/Olafs-World/flight-search
 metadata:
-  {
-    "rocie":
-      {
-        "emoji": "✈️",
-        "requires": { "bins": ["uvx"] },
-        "install":
-          [
-            {
-              "id": "uv",
-              "kind": "pip",
-              "package": "uv",
-              "bins": ["uvx"],
-              "label": "Install uv (for uvx)",
-            },
-          ],
-      },
-  }
+  homepage: https://github.com/Olafs-World/flight-search
+  dependencies:
+    uvx:
+      description: UV package runner
+      check: "which uvx"
+      install: "pip install uv"
 ---
 
 # Flight Search

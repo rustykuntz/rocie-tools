@@ -3,16 +3,16 @@ name: notion-spec-to-implementation
 description: Turn Notion specs/PRDs into implementation plans and tasks.
 metadata:
   short-description: Turn Notion specs into implementation plans, tasks, and progress tracking
-dependencies:
-  notion-mcp:
-    description: Notion MCP server configured
-    check: "codex mcp list | grep -q notion"
-    install: "codex mcp add notion --url https://mcp.notion.com/mcp"
-  notion-mcp-auth:
-    description: Notion MCP OAuth login completed
-    check: "codex mcp login notion"
-    install: "codex mcp login notion"
-    interactive: [oauth]
+  dependencies:
+    notion-mcp:
+      description: Notion MCP server configured
+      check: "codex mcp list | grep -q notion"
+      install: "codex mcp add notion --url https://mcp.notion.com/mcp"
+    notion-mcp-auth:
+      description: Notion MCP OAuth login completed
+      check: "codex mcp login notion"
+      install: "codex mcp login notion"
+      interactive: [oauth]
 ---
 
 # Spec to Implementation

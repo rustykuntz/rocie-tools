@@ -1,8 +1,6 @@
 ---
 name: apple-reminders
 description: Add, edit, complete, and list reminders on macOS via remindctl. Use for "remind me to…", "show my todos", or "mark X done".
-
-
 metadata:
   homepage: https://github.com/steipete/remindctl
   dependencies:
@@ -11,10 +9,10 @@ metadata:
       check: "remindctl --help"
       install: "brew install steipete/tap/remindctl"
     remindctl-permissions:
-    description: Reminders permission granted for remindctl
-    check: "remindctl status"
-    install: "remindctl authorize"
-    interactive: [manual-setup]
+      description: Reminders permission granted for remindctl
+      check: "remindctl status"
+      install: "remindctl authorize"
+      interactive: [manual-setup]
 ---
 # Apple Reminders CLI (remindctl)
 

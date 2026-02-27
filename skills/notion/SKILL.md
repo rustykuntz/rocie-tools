@@ -1,13 +1,14 @@
 ---
 name: notion
 description: Create and manage Notion pages, databases, and blocks via API. Use for "add a page to Notion", "query my database", or "update that Notion doc".
-homepage: https://developers.notion.com
-dependencies:
-  notion-api-key:
-    description: Notion API key stored locally
-    check: "test -s ~/.config/notion/api_key"
-    install: "mkdir -p ~/.config/notion && echo \"ntn_your_key_here\" > ~/.config/notion/api_key"
-    interactive: [api-key]
+metadata:
+  homepage: https://developers.notion.com
+  dependencies:
+    notion-api-key:
+      description: Notion API key stored locally
+      check: "test -s ~/.config/notion/api_key"
+      install: "mkdir -p ~/.config/notion && echo \"ntn_your_key_here\" > ~/.config/notion/api_key"
+      interactive: [api-key]
 ---
 # notion
 

@@ -2,8 +2,15 @@
 name: nest-devices
 description: Control Nest thermostat, cameras, and doorbell. Use for "set temperature to 24", "show front door camera", or "who's at the door?".
 metadata:
-  emoji: "🏠"
+  homepage: https://developers.google.com/nest/device-access
+  credential: credentials_tools.nest_project_id
 ---
+
+## Credential
+
+Key: `credentials_tools.nest_project_id` — check availability via `get_config credentials_tools.nest_project_id`.
+
+Also requires `credentials_tools.nest_client_id`, `credentials_tools.nest_client_secret`, and `credentials_tools.nest_refresh_token`.
 
 # Nest Device Access
 

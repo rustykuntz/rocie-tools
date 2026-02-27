@@ -1,12 +1,13 @@
 ---
 name: spotify-player
 description: Play, pause, search, and queue music on Spotify from the terminal. Use for "play some jazz", "skip this song", or "search for…".
-homepage: https://www.spotify.com
-dependencies:
-  spotify_player:
-    description: spotify_player CLI
-    check: "spotify_player --help"
-    install: "brew install spotify_player"
+metadata:
+  homepage: https://www.spotify.com
+  dependencies:
+    spotify_player:
+      description: spotify_player CLI
+      check: "spotify_player --help"
+      install: "brew install spotify_player"
 ---
 # spogo / spotify_player
 

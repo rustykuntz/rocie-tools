@@ -1,8 +1,19 @@
 ---
 name: alpaca-market-data
 description: Check stock prices, crypto quotes, option chains, and market history via Alpaca.
-homepage: https://docs.alpaca.markets/docs/alpaca-api-platform
-dependencies: curl, jq, wscat
+metadata:
+  homepage: https://docs.alpaca.markets/docs/alpaca-api-platform
+  dependencies:
+    curl:
+      description: HTTP client
+      check: "which curl"
+    jq:
+      description: JSON processor
+      check: "which jq"
+    wscat:
+      description: WebSocket client
+      check: "which wscat"
+      install: "npm i -g wscat"
 ---
 
 # Alpaca Market Data (Stocks, Options, Crypto)

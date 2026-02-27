@@ -1,7 +1,8 @@
 ---
 name: supabase
 description: Run SQL queries, store data, and do vector/similarity search on Supabase. Use for "save this to the database", "search similar items", or "create a table".
-metadata: {"requires":{"env":["SUPABASE_URL","SUPABASE_SERVICE_KEY"]}}
+metadata:
+  homepage: https://supabase.com/
 ---
 
 # Supabase CLI

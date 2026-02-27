@@ -1,12 +1,13 @@
 ---
 name: steam
 description: Browse and filter your Steam game library — recommendations, playtime, Steam Deck compatibility.
-homepage: https://github.com/mjrussell/steam-cli
 metadata:
-  emoji: "🎮"
-  requires:
-    bins: ["steam"]
-    env: ["STEAM_API_KEY"]
+  homepage: https://github.com/mjrussell/steam-cli
+  dependencies:
+    steam:
+      description: Steam Games CLI
+      check: "steam --help"
+      install: "npm install -g steam-games-cli"
 ---
 
 # Steam Games CLI

@@ -1,7 +1,16 @@
 ---
 name: google-calendar
 description: List, create, update, and delete Google Calendar events.
+metadata:
+  homepage: https://developers.google.com/calendar
+  credential: credentials_tools.google_refresh_token
 ---
+
+## Credential
+
+Key: `credentials_tools.google_refresh_token` — check availability via `get_config credentials_tools.google_refresh_token`.
+
+Also requires `credentials_tools.google_client_id` and `credentials_tools.google_client_secret`.
 
 # Google Calendar Skill
 

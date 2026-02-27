@@ -1,6 +1,7 @@
 ---
 name: price-tracker
 description: Monitor and compare product prices across Amazon, eBay, Walmart, and Best Buy.
+metadata: {}
 ---
 
 # Price Tracker

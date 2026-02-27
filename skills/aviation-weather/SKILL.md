@@ -1,6 +1,8 @@
 ---
 name: aviation-weather
 description: Fetch airport weather (METAR, TAF, PIREPs) for flight planning and briefings. Use for "weather at KJFK", "TAF for EGLL", or pre-flight weather checks.
+metadata:
+  homepage: https://aviationweather.gov/
 ---
 
 # Aviation Weather

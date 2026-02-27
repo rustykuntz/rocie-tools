@@ -3,9 +3,13 @@ name: aviation-stack-flight-tracker
 description: Track live flight status, delays, gates, and position. Use for "track AA100", "is my flight on time?", or "where is BA123 right now?".
 
 metadata:
-   version: 1.0.0
-   credential: credentials_tools.aviationstack_api_key
+  homepage: https://aviationstack.com/
+  credential: credentials_tools.aviationstack_api_key
 ---
+
+## Credential
+
+Key: `credentials_tools.aviationstack_api_key` — check availability via `get_config credentials_tools.aviationstack_api_key`.
 
 # Flight Tracker
 
