@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "generated_at": "2026-02-27T08:33:21.275Z",
   "count": 43,
+=======
+  "generated_at": "2026-02-28T08:46:39.000Z",
+  "count": 44,
+>>>>>>> e84da05 (fetch-page)
   "items": [
     {
       "name": "alpaca-market-data",
@@ -71,6 +76,14 @@
       "description": "Create, edit, and analyze Word documents (.docx) — formatting, tracked changes, comments, and text extraction.",
       "category": "general",
       "path": "skills/docx/SKILL.md",
+      "homepage": null,
+      "source": null
+    },
+    {
+      "name": "fetch-page",
+      "description": "Fetch a web page and return clean text content. Fast, lightweight HTTP fetch with no browser engine. Use this FIRST before agent-browser — it's faster and cheaper. Falls back with a clear message when the page requires JavaScript rendering.",
+      "category": "general",
+      "path": "skills/fetch-page/SKILL.md",
       "homepage": null,
       "source": null
     },
