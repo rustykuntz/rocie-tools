@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-11T11:21:04.730Z",
+  "generated_at": "2026-03-11T13:19:43.301Z",
   "count": 44,
   "items": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "name": "gog-google-workspace-cli-for-gmail-drive-sheets-docs",
-      "description": "Read and send Gmail, manage Google Drive, edit Google Sheets and Docs, search Google Contacts.",
+      "description": "Gmail, Calendar, Chat, Classroom, Drive, Docs, Slides, Sheets, Contacts, Tasks, People, Groups, Keep — all via gog CLI.",
       "category": "general",
       "path": "skills/gog-google-workspace-cli-for-gmail-drive-sheets-docs/SKILL.md",
       "homepage": "https://gogcli.sh",
